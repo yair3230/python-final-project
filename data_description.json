@@ -1,13 +1,20 @@
 {
+  "participant_id": {
+    "LongName": "Participant ID",
+    "type": "object"
+  },
   "age_ses-T1": {
-    "LongName": "Age at session 1"
+    "LongName": "Age at session 1",
+    "type": "float64"
   },
   "age_ses-T2": {
-    "LongName": "Age at session 2"
+    "LongName": "Age at session 2",
+    "type": "float64"
   },
   "sex": {
     "LongName": "Sex",
     "Description": "Sex of participants",
+    "type": "object",
     "Levels": {
       "1": "male",
       "2": "female"
@@ -19,27 +26,33 @@
     "Level": {
       "1": "Left",
       "2": "Right"
-    }
+    },
+    "type": "object"
   },
   "T1w_date": {
     "LongName": "Shifted date of aquistion of T1w image",
-    "Description": "Shifted date of aquistion of T1w image"
+    "Description": "Shifted date of aquistion of T1w image",
+    "type": "datetime64"
   },
   "Syllogisms_run-01_date": {
     "LongName": "Shifted date of aquistion of Syllogisms_run-01",
-    "Description": "Shifted date of aquistion of Syllogisms_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy"
+    "Description": "Shifted date of aquistion of Syllogisms_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy",
+    "type": "datetime64"
   },
   "Syllogisms_run-02_date": {
     "LongName": "Shifted date of aquistion of Syllogisms_run-02",
-    "Description": "Shifted date of aquistion of Syllogisms_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy"
+    "Description": "Shifted date of aquistion of Syllogisms_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy",
+    "type": "datetime64"
   },
   "Transitive_run-01_date": {
     "LongName": "Shifted date of aquistion of Transitive_run-01",
-    "Description": "Shifted date of aquistion of Transitive_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy"
+    "Description": "Shifted date of aquistion of Transitive_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy",
+    "type": "datetime64"
   },
   "Transitive_run-02_date": {
     "LongName": "Shifted date of aquistion of Transitive_run-02",
-    "Description": "Shifted date of aquistion of Transitive_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy"
+    "Description": "Shifted date of aquistion of Transitive_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy",
+    "type": "datetime64"
   },
   "race": {
     "Description": "How would you describe yourself?",
@@ -51,7 +64,8 @@
       "5": "White",
       "6": "Two or more races",
       "7": "Other"
-    }
+    },
+    "type": "object"
   },
   "ethnicity": {
     "LongName": "Ethnicity",
@@ -60,95 +74,118 @@
       "1": "Hispanic or Latino",
       "2": "Not Hispanic or Latino",
       "3": "Unknown or not resported"
-    }
+    },
+    "type": "object"
   },
   "ADHD_HI_Raw": {
     "LongName": "ADHD Hyperactivity and Impuslivity Raw Score",
-    "Description": "Hyperactivity and impulsivity raw subscore"
+    "Description": "Hyperactivity and impulsivity raw subscore",
+    "type": "float64"
   },
   "ADHD_HI_%": {
-  	"LongName": "ADHD Hyperactivity and Impulsivity Percentile",
-	"Description": "Hyperactivity and impulsivity age-normed percentile"
+    "LongName": "ADHD Hyperactivity and Impulsivity Percentile",
+    "Description": "Hyperactivity and impulsivity age-normed percentile",
+    "type": "object"
   },
   "ADHD_IA_Raw": {
     "LongName": "ADHD Inattention Raw Score",
-    "Description": "Inattention raw subscore"
+    "Description": "Inattention raw subscore",
+    "type": "float64"
   },
   "ADHD_IA_%": {
     "LongName": "ADHD Inattention Percentile",
-	"Description": "Inattention age-normed percentile"
+    "Description": "Inattention age-normed percentile",
+    "type": "float64"
   },
   "ADHD_Total_Raw": {
     "LongName": "ADHD Total Raw Score",
-    "Description": "Total ADHD raw score"
+    "Description": "Total ADHD raw score",
+    "type": "float64"
   },
   "ADHD_Total_%": {
     "LongName": "ADHD Total Percentile",
-	"Description": "Total ADHD age-normed percentile"
+    "Description": "Total ADHD age-normed percentile",
+    "type": "object"
   },
   "AWMA-S_VerbalSTM_Raw": {
     "LongName": "AWMA-S Verbal Short-Term Memory: Digial Recall Raw Score",
-    "Description": "Verbal short-term memory (digit recall subtest) raw score"
+    "Description": "Verbal short-term memory (digit recall subtest) raw score",
+    "type": "float64"
   },
   "AWMA-S_VerbalSTM_StS": {
     "LongName": "AWMA-S Verbal Short-Term Memory: Digital Recall Standard Score",
-    "Description": "Verbal short-term memory (digit recall subtest) standard score"
+    "Description": "Verbal short-term memory (digit recall subtest) standard score",
+    "type": "float64"
   },
   "AWMA-S_VerbalWM_Raw": {
     "LongName": "AWMA-S Verbal Working Memory: Listening Recall Raw Score",
-    "Description": "Verbal working memory (listening recall subtest) raw score"
+    "Description": "Verbal working memory (listening recall subtest) raw score",
+    "type": "float64"
   },
   "AWMA-S_VerbalWM_StS": {
     "LongName": "AWMA-S Verbal Working Memory: Listening Recall Standard Score",
-    "Description": "Verbal working memory (listening recall subtest) standard score"
+    "Description": "Verbal working memory (listening recall subtest) standard score",
+    "type": "float64"
   },
   "AWMA-S_VisuoSpatialSTM_Raw": {
     "LongName": "AWMA-S Visuo-Spatial Short-Term Memory: Dot Matrix Raw Score",
-    "Description": "Visuo-spatial short-term memory (dot matrix subtest) raw score"
+    "Description": "Visuo-spatial short-term memory (dot matrix subtest) raw score",
+    "type": "float64"
   },
   "AWMA-S_VisuoSpatialSTM_StS": {
     "LongName": "AWMA-S Visuo-Spatial Short-Term Memory: Dot Matrix Standard Score",
-    "Description": "Visuo-spatial short-term memory (dot matrix subtest) standard score"
+    "Description": "Visuo-spatial short-term memory (dot matrix subtest) standard score",
+    "type": "float64"
   },
   "AWMA-S_VisuoSpatialWM_Raw": {
     "LongName": "AWMA-S Visuo-Spatial Working Memory: Spatial Recall Raw Score",
-    "Description": "Visuo-spatial working memory (spatial recall subtest) raw score"
+    "Description": "Visuo-spatial working memory (spatial recall subtest) raw score",
+    "type": "float64"
   },
   "AWMA-S_VisuoSpatialWM_StS": {
     "LongName": "AWMA-S Visuo-Spatial Working Memory: Spatial Recall Standard Score",
-    "Description": "Visuo-spatial working memory (spatial recall subtest) standard score"
+    "Description": "Visuo-spatial working memory (spatial recall subtest) standard score",
+    "type": "float64"
   },
   "CMAT_Addition_Raw": {
     "LongName": "CMAT Addition Raw Score",
-    "Description": "Addition subtest raw score"
+    "Description": "Addition subtest raw score",
+    "type": "int64"
   },
   "CMAT_Addition_StS": {
     "LongName": "CMAT Addition Standard Score",
-    "Description": "Addition subtest standardized score"
+    "Description": "Addition subtest standardized score",
+    "type": "int64"
   },
   "CMAT_Subtraction_Raw": {
     "LongName": "CMAT Subtraction Raw Score",
-    "Description": "Subtraction subtest raw score"
+    "Description": "Subtraction subtest raw score",
+    "type": "int64"
   },
   "CMAT_Subtraction_StS": {
     "LongName": "CMAT Subtraction Standard Score",
-    "Description": "Subtraction subtest standardized score"
+    "Description": "Subtraction subtest standardized score",
+    "type": "int64"
   },
   "CMAT_Multiplication_Raw": {
     "LongName": "CMAT Multiplication Raw Score",
-    "Description": "Multiplication subtest raw score"
+    "Description": "Multiplication subtest raw score",
+    "type": "int64"
   },
   "CMAT_Multiplication_StS": {
     "LongName": "CMAT Multiplication Standard Score",
-    "Description": "Multiplication subtest standardized score"
+    "Description": "Multiplication subtest standardized score",
+    "type": "int64"
   },
   "CMAT_Division_Raw": {
     "LongName": "CMAT Division Raw Score",
-    "Description": "Division subtest raw score"
+    "Description": "Division subtest raw score",
+    "type": "int64"
   },
   "CMAT_Division_StS": {
     "LongName": "CMAT Division Standard Score",
-    "Description": "Division subtest standardized score"
+    "Description": "Division subtest standardized score",
+    "type": "int64"
   },
   "CMAT_BasicCalc_Comp_Sum": {
     "LongName": "CMAT Basic Calculations Composite Sum",
@@ -156,39 +193,48 @@
   },
   "CMAT_BasicCalc_Comp_Quotient": {
     "LongName": "CMAT Basic Calculations Composite Quotient",
-    "Description": "Basic calculations composite quotient"
+    "Description": "Basic calculations composite quotient",
+    "type": "int64"
   },
   "CTOPP_EL_Raw": {
     "LongName": "CTOPP Elision Raw Score",
-    "Description": "Elision subtest raw score"
+    "Description": "Elision subtest raw score",
+    "type": "int64"
   },
   "CTOPP_EL_StS": {
     "LongName": "CTOPP Elision Standard Score",
-    "Description": "Elision subtest standardized score"
+    "Description": "Elision subtest standardized score",
+    "type": "int64"
   },
   "CTOPP_BW_Raw": {
     "LongName": "CTOPP Blending Words Raw Score",
-    "Description": "Blending words subtest raw score"
+    "Description": "Blending words subtest raw score",
+    "type": "int64"
   },
   "CTOPP_BW_StS": {
     "LongName": "CTOPP Blending Words Standard Score",
-    "Description": "Blending words subtest standardized score"
+    "Description": "Blending words subtest standardized score",
+    "type": "int64"
   },
   "CTOPP_RD_Raw": {
     "LongName": "CTOPP Rapid Digit Naming Raw Score",
-    "Description": "Rapid digit naming subtest raw score"
+    "Description": "Rapid digit naming subtest raw score",
+    "type": "int64"
   },
   "CTOPP_RD_StS": {
     "LongName": "CTOPP Rapid Digit Naming Standard Score",
-    "Description": "Rapid digit naming subtest standardized score"
+    "Description": "Rapid digit naming subtest standardized score",
+    "type": "int64"
   },
   "CTOPP_RL_Raw": {
     "LongName": "CTOPP Rapid Letter Naming Raw Score",
-    "Description": "Rapid letter naming subtest raw score"
+    "Description": "Rapid letter naming subtest raw score",
+    "type": "int64"
   },
   "CTOPP_RL_StS": {
     "LongName": "CTOPP Rapid Letter Naming Standard Score",
-    "Description": "Rapid letter naming subtest standardized score"
+    "Description": "Rapid letter naming subtest standardized score",
+    "type": "int64"
   },
   "CTOPP_PhonAwareness_SumStS": {
     "LongName": "CTOPP Phonemic Awareness Sum of Standard Scores",
@@ -196,7 +242,8 @@
   },
   "CTOPP_PhonAwareness_Comp": {
     "LongName": "CTOPP Phonemic Awareness Composite Score",
-    "Description": "Phonemic awareness composite score"
+    "Description": "Phonemic awareness composite score",
+    "type": "int64"
   },
   "CTOPP_RapidNaming_SumStS": {
     "LongName": "CTOPP Rapid Naming Sum of Standard Scores",
@@ -204,157 +251,186 @@
   },
   "CTOPP_RapidNaming_Comp": {
     "LongName": "CTOPP Rapid Naming Composite Score",
-    "Description": "Rapid naming composite score"
+    "Description": "Rapid naming composite score",
+    "type": "int64"
   },
   "speech_delay": {
     "Description": "Does your child have speech delays/problems? (ie: stutters, difficult to understand?)",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "speech_delay_explanation": {
-    "Description": "If yes [speech_delay], please explain"
+    "Description": "If yes [speech_delay], please explain",
+    "type": "object"
   },
   "speech_language_therapy": {
     "Description": "Was speech/language therapy ever necessary?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "struggle_reading": {
     "Description": "Does your child struggle with reading?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "struggle_reading_explanation": {
-    "Description": "If yes [struggle_reading], please describe the nature of their difficulty:"
+    "Description": "If yes [struggle_reading], please describe the nature of their difficulty:",
+    "type": "object"
   },
   "reading_disability_tested": {
     "Description": "Has your child ever been tested for a Reading Disability?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "int64"
   },
   "reading_disability_diagnosis": {
-    "description": "If your child HAS been tested for a Reading Disability, please list diagnosis:"
+    "description": "If your child HAS been tested for a Reading Disability, please list diagnosis:",
+    "type": "object"
   },
   "tutoring_reading": {
     "Description": "Is or has your child received remediation/tutoring for reading issues?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "int64"
   },
   "struggle_math": {
     "Description": "Does your child struggle with math?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "math_disability_tested": {
     "Description": "Has your child ever been tested for a Math Disability?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "int64"
   },
   "math_disability_diagnosis": {
-    "description": "If your child HAS been tested for a Math Disability, please list diagnosis:"
+    "description": "If your child HAS been tested for a Math Disability, please list diagnosis:",
+    "type": "object"
   },
   "tutoring_math": {
     "Description": "Is or has your child received remediation/tutoring for math issues?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "int64"
   },
   "school_type": {
-    "Description": "My child/children attend(s):"
+    "Description": "My child/children attend(s):",
+    "type": "object"
   },
   "regular_classroom": {
     "Description": "Is your child in a regular classroom?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "other_classroom_type": {
-    "Description": "If no [regular_classroom], please specify:"
+    "Description": "If no [regular_classroom], please specify:",
+    "type": "object"
   },
   "skipped_grades": {
     "Description": "Has your child repeated or skipped any grades?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "skipped_grades_other": {
-    "Description": "If yes [skipped_grades], please specify:"
+    "Description": "If yes [skipped_grades], please specify:",
+    "type": "object"
   },
   "individual_education_plan/504_plan": {
     "Description": "Does your child have an Individualized Education Plan or a 504 Plan?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_teacher": {
     "Description": "How does your child prefer to learn? Selected: Listening in class to teacher.",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_visual": {
     "Description": "How does your child prefer to learn? Selected: Viewing visual information provided in class.",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_demonstrations": {
     "Description": "How does your child prefer to learn? Selected: Watching demonstrations",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_peer-interactions": {
     "Description": "How does your child prefer to learn? Selected: Interaction with peers",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_discussions": {
     "Description": "How does your child prefer to learn? Selected: Participating in discussions",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "learning_preference_other": {
-    "Description": "How does your child prefer to learn? Selected: other. Write-in response."
+    "Description": "How does your child prefer to learn? Selected: other. Write-in response.",
+    "type": "object"
   },
   "primary_language": {
-    "Description": "Primary language spoken at home:"
+    "Description": "Primary language spoken at home:",
+    "type": "object"
   },
   "lives_with": {
-    "Description": "Child lives with:"
+    "Description": "Child lives with:",
+    "type": "object"
   },
   "mother_age": {
     "LongName": "Mother's age",
-	"Description": "Mother's age within indicated five year increment to protect subject identification"
+    "Description": "Mother's age within indicated five year increment to protect subject identification",
+    "type": "object"
   },
   "mother_occupation": {
     "LongName": "Mother's occupation",
-	"Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer"
+    "Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer",
+    "type": "object"
   },
   "mother_highest_grade": {
     "Description": "Mother's highest grade/degree completed",
@@ -364,280 +440,336 @@
       "3": "Some College",
       "4": "Bachelor's Degree",
       "5": "Graduate Degree"
-    }
+    },
+    "type": "float64"
   },
   "mother_learning_problems": {
     "Description": "Mother any history of learning problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "mother_speech_problems": {
     "Description": "Mother any history of speech problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "mother_behavioral_problems": {
     "Description": "Mother any history of behavioral problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "mother_medical_problems": {
     "Description": "Mother any history of medical problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "mother_emotional_problems": {
     "Description": "Mother any history of emotional problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "mother_drug_alcohol_abuse": {
     "Description": "Mother any history of drug or alcohol abuse?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_age": {
     "LongName": "Father's age",
-	"Description": "Father's age within indicated five year increment to protect subject identification"
+    "Description": "Father's age within indicated five year increment to protect subject identification",
+    "type": "object"
   },
   "father_occupation": {
     "LongName": "Father's occupation",
-	"Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer"
+    "Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer",
+    "type": "object"
   },
   "father_highest_grade": {
     "LongName": "Father's highest grade/degree completed",
-	"Levels": {
+    "Levels": {
       "1": "No High School",
       "2": "High School",
       "3": "Some College",
       "4": "Bachelor's Degree",
       "5": "Graduate Degree"
-    }
+    },
+    "type": "float64"
   },
   "father_learning_problems": {
     "Description": "Father any history of learning problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_speech_problems": {
     "Description": "Father any history of speech problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_behavioral_problems": {
     "Description": "Father any history of behavioral problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_medical_problems": {
     "Description": "Father any history of medical problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_emotional_problems": {
     "Description": "Father any history of emotional problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "father_drug_alcohol_abuse": {
     "Description": "Father any history of drug or alcohol abuse?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "family_history_learning_problems": {
     "Description": "Any family history of learning problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "family_history_ADD": {
     "Description": "Any family history of attention deficit disorder?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "family_history_behavioral_problems": {
     "Description": "Any family history of behavioral problems?",
     "Levels": {
       "1": "yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "family_history_neurological_problems": {
     "Description": "Any family history of neurological problems?",
     "Levels": {
       "1": "Yes",
       "2": "No"
-    }
+    },
+    "type": "float64"
   },
   "KeyMath_Numeration_Raw": {
     "LongName": "KeyMath-3 Numeration Raw Score",
-    "Description": "Numeration subtest raw score"
+    "Description": "Numeration subtest raw score",
+    "type": "int64"
   },
   "KeyMath_Numeration_ScS": {
     "LongName": "KeyMath-3 Numeration Scaled Score",
-    "Description": "Numeration subtest scale score"
+    "Description": "Numeration subtest scale score",
+    "type": "int64"
   },
   "KeyMath_Measurement_Raw": {
     "LongName": "KeyMath-3 Measurement Raw Score",
-    "Description": "Measurement subtest raw score"
+    "Description": "Measurement subtest raw score",
+    "type": "int64"
   },
   "KeyMath_Measurement_ScS": {
     "LongName": "KeyMath-3 Measurement Scaled Score",
-    "Description": "Measurement subtest scale score"
+    "Description": "Measurement subtest scale score",
+    "type": "int64"
   },
   "KeyMath_ProblemSolving_Raw": {
     "LongName": "KeyMath-3 Problem Solving Raw Score",
-    "Description": "Foundations of problem solving subtest raw score"
+    "Description": "Foundations of problem solving subtest raw score",
+    "type": "int64"
   },
   "KeyMath_ProblemSolving_ScS": {
     "LongName": "KeyMath-3 Problem Solving Scaled Score",
-    "Description": "Foundations of problem solving subtest scale score"
+    "Description": "Foundations of problem solving subtest scale score",
+    "type": "int64"
   },
   "TOMA-2_Attitudes_Raw": {
     "LongName": "TOMA-2 Attitude Toward Math Raw Score",
-    "Description": "Attitude toward math subtest raw score"
+    "Description": "Attitude toward math subtest raw score",
+    "type": "int64"
   },
   "TOMA-2_Attitudes_StS": {
     "LongName": "TOMA-2 Attitude Toward Math Standard Score",
-    "Description": "Attitude toward math subtest standard score"
+    "Description": "Attitude toward math subtest standard score",
+    "type": "object"
   },
   "TOWRE_SW_Raw": {
     "LongName": "TOWRE Sight Word Efficiency Raw Score",
-    "Description": "Sight word efficiency subtest raw score"
+    "Description": "Sight word efficiency subtest raw score",
+    "type": "int64"
   },
   "TOWRE_SW_StS": {
     "LongName": "TOWRE Sight Word Efficiency Standard Score",
-    "Description": "Sight word efficiency subtest standard score"
+    "Description": "Sight word efficiency subtest standard score",
+    "type": "int64"
   },
   "TOWRE_PD_Raw": {
     "LongName": "TOWRE Phonemic Decoding Efficiency Raw Score",
-    "Description": "Phonemic decoding efficiency subtest raw score"
+    "Description": "Phonemic decoding efficiency subtest raw score",
+    "type": "int64"
   },
   "TOWRE_PD_StS": {
     "LongName": "TOWRE Phonemic Decoding Efficiency Standard Score",
-    "Description": "Phonemic decoding efficiency subtest standard score"
+    "Description": "Phonemic decoding efficiency subtest standard score",
+    "type": "int64"
   },
   "TOWRE_Total_StS": {
     "LongName": "TOWRE Total Standard Score",
-    "Description": "Total word reading efficiency standard score"
+    "Description": "Total word reading efficiency standard score",
+    "type": "int64"
   },
   "WASI_Vocab_Raw": {
     "LongName": "WASI Vocabulary Raw Score",
-    "Description": "Vocabulary subtest raw score"
+    "Description": "Vocabulary subtest raw score",
+    "type": "int64"
   },
   "WASI_Vocab_T-Score": {
     "LongName": "WASI Vocabulary T-score",
-    "Description": "Vocabulary subtest T-score"
+    "Description": "Vocabulary subtest T-score",
+    "type": "int64"
   },
   "WASI_BD_Raw": {
     "LongName": "WASI Block Design Raw Score",
-    "Description": "Block design subtest raw score"
+    "Description": "Block design subtest raw score",
+    "type": "int64"
   },
   "WASI_BD_T-Score": {
     "LongName": "WASI Block Design T-score",
-    "Description": "Block design subtest T-score"
+    "Description": "Block design subtest T-score",
+    "type": "int64"
   },
   "WASI_Sim_Raw": {
     "LongName": "WASI Similarities Raw Score",
-    "Description": "Similarities subtest raw score"
+    "Description": "Similarities subtest raw score",
+    "type": "int64"
   },
   "WASI_Sim_T-Score": {
     "LongName": "WASI Similarities T-score",
-    "Description": "Similarities subtest T-score"
+    "Description": "Similarities subtest T-score",
+    "type": "int64"
   },
   "WASI_MR_Raw": {
     "LongName": "WASI Matrix Reasoning Raw Score",
-    "Description": "Matrix reasoning subtest raw score"
+    "Description": "Matrix reasoning subtest raw score",
+    "type": "int64"
   },
   "WASI_MR_T-Score": {
     "LongName": "WASI Matrix Reasoning T-score",
-    "Description": "Matrix reasoning subtest T-score"
+    "Description": "Matrix reasoning subtest T-score",
+    "type": "int64"
   },
   "WASI_VIQ": {
     "LongName": "WASI Verbal IQ Score",
-    "Description": "Verbal IQ score"
+    "Description": "Verbal IQ score",
+    "type": "int64"
   },
   "WASI_PIQ": {
     "LongName": "WASI Performance IQ Score",
-    "Description": "Performance IQ score"
+    "Description": "Performance IQ score",
+    "type": "int64"
   },
   "WASI_FSIQ": {
     "LongName": "WASI Full Scale IQ Score",
-    "Description": "Full Scale IQ score"
+    "Description": "Full Scale IQ score",
+    "type": "int64"
   },
   "WJ-III_WordID_Raw": {
     "LongName": "WJ-III Letter-Word Identification Raw Score",
-    "Description": "Letter-Word Identification subtest raw score"
+    "Description": "Letter-Word Identification subtest raw score",
+    "type": "int64"
   },
   "WJ-III_WordID_StS": {
     "LongName": "WJ-III Letter-Word Identification Standard Score",
-    "Description": "Letter-Word Identification subtest standard score"
+    "Description": "Letter-Word Identification subtest standard score",
+    "type": "int64"
   },
   "WJ-III_WA_Raw": {
     "LongName": "WJ-III Word Attack Raw Score",
-    "Description": "Word Attack subtest raw score"
+    "Description": "Word Attack subtest raw score",
+    "type": "int64"
   },
   "WJ-III_WA_StS": {
     "LongName": "WJ-III Word Attack Standard Score",
-    "Description": "Word Attack subtest standard score"
+    "Description": "Word Attack subtest standard score",
+    "type": "int64"
   },
   "WJ-III_PassComp_Raw": {
     "LongName": "WJ-III Passage Comprehension Raw Score",
-    "Description": "Passage comprehension subtest raw score"
+    "Description": "Passage comprehension subtest raw score",
+    "type": "int64"
   },
   "WJ-III_PassComp_StS": {
     "LongName": "WJ-III Passage Comprehension Standard Score",
-    "Description": "Passage comprehension subtest standard score"
+    "Description": "Passage comprehension subtest standard score",
+    "type": "int64"
   },
   "WJ-III_MathFluency_Raw": {
     "LongName": "WJ-III Math Fluency Raw Score",
-    "Description": "Math Fluency subtest raw score"
+    "Description": "Math Fluency subtest raw score",
+    "type": "int64"
   },
   "WJ-III_MathFluency_StS": {
     "LongName": "WJ-III Math Fluency Standard Score",
-    "Description": "Math fluency subtest standard score"
+    "Description": "Math fluency subtest standard score",
+    "type": "int64"
   },
-  "WJ-III_SpatialRelations_Raw":{
+  "WJ-III_SpatialRelations_Raw": {
     "LongName": "WJ-III Spatial Relations Raw Score",
-    "Description": "Spatial relations raw score"
-},
+    "Description": "Spatial relations raw score",
+    "type": "int64"
+  },
   "WJ-III_SpatialRelations_Letter": {
     "LongName": "WJ-III Spatial Relations Raw Letter Score",
-    "Description": "Letter corresponding to items administered for spatial relations test"
+    "Description": "Letter corresponding to items administered for spatial relations test",
+    "type": "object"
   },
   "WJ-III_SpatialRelations_StS": {
     "LongName": "WJ-III Spatial Relations Standard Score",
-    "Description": "Spatial Relations subtest standard score"
+    "Description": "Spatial Relations subtest standard score",
+    "type": "int64"
   },
   "WJ-III_BRS_StS": {
     "LongName": "WJ-III Basic Reading Skills Standard Score",
-    "Description": "Basic Reading Skills cluster standard score"
+    "Description": "Basic Reading Skills cluster standard score",
+    "type": "int64"
   }
 }
