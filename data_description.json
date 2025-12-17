@@ -1,0 +1,643 @@
+{
+  "age_ses-T1": {
+    "LongName": "Age at session 1"
+  },
+  "age_ses-T2": {
+    "LongName": "Age at session 2"
+  },
+  "sex": {
+    "LongName": "Sex",
+    "Description": "Sex of participants",
+    "Levels": {
+      "1": "male",
+      "2": "female"
+    }
+  },
+  "handedness": {
+    "LongName": "Participant handedness",
+    "Description": "Left or Right-Handed",
+    "Level": {
+      "1": "Left",
+      "2": "Right"
+    }
+  },
+  "T1w_date": {
+    "LongName": "Shifted date of aquistion of T1w image",
+    "Description": "Shifted date of aquistion of T1w image"
+  },
+  "Syllogisms_run-01_date": {
+    "LongName": "Shifted date of aquistion of Syllogisms_run-01",
+    "Description": "Shifted date of aquistion of Syllogisms_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy"
+  },
+  "Syllogisms_run-02_date": {
+    "LongName": "Shifted date of aquistion of Syllogisms_run-02",
+    "Description": "Shifted date of aquistion of Syllogisms_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy"
+  },
+  "Transitive_run-01_date": {
+    "LongName": "Shifted date of aquistion of Transitive_run-01",
+    "Description": "Shifted date of aquistion of Transitive_run-01. Dates were shifted -365 to 0 days across subjects to protect privacy"
+  },
+  "Transitive_run-02_date": {
+    "LongName": "Shifted date of aquistion of Transitive_run-02",
+    "Description": "Shifted date of aquistion of Transitive_run-02. Dates were shifted -365 to 0 days across subjects to protect privacy"
+  },
+  "race": {
+    "Description": "How would you describe yourself?",
+    "Levels": {
+      "1": "American Indian or Alaskan Native",
+      "2": "Asian",
+      "3": "Black or African American",
+      "4": "Native Hawaiian or Other Pacific Islander",
+      "5": "White",
+      "6": "Two or more races",
+      "7": "Other"
+    }
+  },
+  "ethnicity": {
+    "LongName": "Ethnicity",
+    "Description": "Ethnicity of participants",
+    "Levels": {
+      "1": "Hispanic or Latino",
+      "2": "Not Hispanic or Latino",
+      "3": "Unknown or not resported"
+    }
+  },
+  "ADHD_HI_Raw": {
+    "LongName": "ADHD Hyperactivity and Impuslivity Raw Score",
+    "Description": "Hyperactivity and impulsivity raw subscore"
+  },
+  "ADHD_HI_%": {
+  	"LongName": "ADHD Hyperactivity and Impulsivity Percentile",
+	"Description": "Hyperactivity and impulsivity age-normed percentile"
+  },
+  "ADHD_IA_Raw": {
+    "LongName": "ADHD Inattention Raw Score",
+    "Description": "Inattention raw subscore"
+  },
+  "ADHD_IA_%": {
+    "LongName": "ADHD Inattention Percentile",
+	"Description": "Inattention age-normed percentile"
+  },
+  "ADHD_Total_Raw": {
+    "LongName": "ADHD Total Raw Score",
+    "Description": "Total ADHD raw score"
+  },
+  "ADHD_Total_%": {
+    "LongName": "ADHD Total Percentile",
+	"Description": "Total ADHD age-normed percentile"
+  },
+  "AWMA-S_VerbalSTM_Raw": {
+    "LongName": "AWMA-S Verbal Short-Term Memory: Digial Recall Raw Score",
+    "Description": "Verbal short-term memory (digit recall subtest) raw score"
+  },
+  "AWMA-S_VerbalSTM_StS": {
+    "LongName": "AWMA-S Verbal Short-Term Memory: Digital Recall Standard Score",
+    "Description": "Verbal short-term memory (digit recall subtest) standard score"
+  },
+  "AWMA-S_VerbalWM_Raw": {
+    "LongName": "AWMA-S Verbal Working Memory: Listening Recall Raw Score",
+    "Description": "Verbal working memory (listening recall subtest) raw score"
+  },
+  "AWMA-S_VerbalWM_StS": {
+    "LongName": "AWMA-S Verbal Working Memory: Listening Recall Standard Score",
+    "Description": "Verbal working memory (listening recall subtest) standard score"
+  },
+  "AWMA-S_VisuoSpatialSTM_Raw": {
+    "LongName": "AWMA-S Visuo-Spatial Short-Term Memory: Dot Matrix Raw Score",
+    "Description": "Visuo-spatial short-term memory (dot matrix subtest) raw score"
+  },
+  "AWMA-S_VisuoSpatialSTM_StS": {
+    "LongName": "AWMA-S Visuo-Spatial Short-Term Memory: Dot Matrix Standard Score",
+    "Description": "Visuo-spatial short-term memory (dot matrix subtest) standard score"
+  },
+  "AWMA-S_VisuoSpatialWM_Raw": {
+    "LongName": "AWMA-S Visuo-Spatial Working Memory: Spatial Recall Raw Score",
+    "Description": "Visuo-spatial working memory (spatial recall subtest) raw score"
+  },
+  "AWMA-S_VisuoSpatialWM_StS": {
+    "LongName": "AWMA-S Visuo-Spatial Working Memory: Spatial Recall Standard Score",
+    "Description": "Visuo-spatial working memory (spatial recall subtest) standard score"
+  },
+  "CMAT_Addition_Raw": {
+    "LongName": "CMAT Addition Raw Score",
+    "Description": "Addition subtest raw score"
+  },
+  "CMAT_Addition_StS": {
+    "LongName": "CMAT Addition Standard Score",
+    "Description": "Addition subtest standardized score"
+  },
+  "CMAT_Subtraction_Raw": {
+    "LongName": "CMAT Subtraction Raw Score",
+    "Description": "Subtraction subtest raw score"
+  },
+  "CMAT_Subtraction_StS": {
+    "LongName": "CMAT Subtraction Standard Score",
+    "Description": "Subtraction subtest standardized score"
+  },
+  "CMAT_Multiplication_Raw": {
+    "LongName": "CMAT Multiplication Raw Score",
+    "Description": "Multiplication subtest raw score"
+  },
+  "CMAT_Multiplication_StS": {
+    "LongName": "CMAT Multiplication Standard Score",
+    "Description": "Multiplication subtest standardized score"
+  },
+  "CMAT_Division_Raw": {
+    "LongName": "CMAT Division Raw Score",
+    "Description": "Division subtest raw score"
+  },
+  "CMAT_Division_StS": {
+    "LongName": "CMAT Division Standard Score",
+    "Description": "Division subtest standardized score"
+  },
+  "CMAT_BasicCalc_Comp_Sum": {
+    "LongName": "CMAT Basic Calculations Composite Sum",
+    "Description": "Sum of standardized scores for addition, subtraction, multiplication, and division subtests"
+  },
+  "CMAT_BasicCalc_Comp_Quotient": {
+    "LongName": "CMAT Basic Calculations Composite Quotient",
+    "Description": "Basic calculations composite quotient"
+  },
+  "CTOPP_EL_Raw": {
+    "LongName": "CTOPP Elision Raw Score",
+    "Description": "Elision subtest raw score"
+  },
+  "CTOPP_EL_StS": {
+    "LongName": "CTOPP Elision Standard Score",
+    "Description": "Elision subtest standardized score"
+  },
+  "CTOPP_BW_Raw": {
+    "LongName": "CTOPP Blending Words Raw Score",
+    "Description": "Blending words subtest raw score"
+  },
+  "CTOPP_BW_StS": {
+    "LongName": "CTOPP Blending Words Standard Score",
+    "Description": "Blending words subtest standardized score"
+  },
+  "CTOPP_RD_Raw": {
+    "LongName": "CTOPP Rapid Digit Naming Raw Score",
+    "Description": "Rapid digit naming subtest raw score"
+  },
+  "CTOPP_RD_StS": {
+    "LongName": "CTOPP Rapid Digit Naming Standard Score",
+    "Description": "Rapid digit naming subtest standardized score"
+  },
+  "CTOPP_RL_Raw": {
+    "LongName": "CTOPP Rapid Letter Naming Raw Score",
+    "Description": "Rapid letter naming subtest raw score"
+  },
+  "CTOPP_RL_StS": {
+    "LongName": "CTOPP Rapid Letter Naming Standard Score",
+    "Description": "Rapid letter naming subtest standardized score"
+  },
+  "CTOPP_PhonAwareness_SumStS": {
+    "LongName": "CTOPP Phonemic Awareness Sum of Standard Scores",
+    "Description": "Sum of elision and blending words subtest standardized scores"
+  },
+  "CTOPP_PhonAwareness_Comp": {
+    "LongName": "CTOPP Phonemic Awareness Composite Score",
+    "Description": "Phonemic awareness composite score"
+  },
+  "CTOPP_RapidNaming_SumStS": {
+    "LongName": "CTOPP Rapid Naming Sum of Standard Scores",
+    "Description": "Sum of rapid digit naming and rapid letter naming subtest standardized scores"
+  },
+  "CTOPP_RapidNaming_Comp": {
+    "LongName": "CTOPP Rapid Naming Composite Score",
+    "Description": "Rapid naming composite score"
+  },
+  "speech_delay": {
+    "Description": "Does your child have speech delays/problems? (ie: stutters, difficult to understand?)",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "speech_delay_explanation": {
+    "Description": "If yes [speech_delay], please explain"
+  },
+  "speech_language_therapy": {
+    "Description": "Was speech/language therapy ever necessary?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "struggle_reading": {
+    "Description": "Does your child struggle with reading?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "struggle_reading_explanation": {
+    "Description": "If yes [struggle_reading], please describe the nature of their difficulty:"
+  },
+  "reading_disability_tested": {
+    "Description": "Has your child ever been tested for a Reading Disability?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "reading_disability_diagnosis": {
+    "description": "If your child HAS been tested for a Reading Disability, please list diagnosis:"
+  },
+  "tutoring_reading": {
+    "Description": "Is or has your child received remediation/tutoring for reading issues?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "struggle_math": {
+    "Description": "Does your child struggle with math?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "math_disability_tested": {
+    "Description": "Has your child ever been tested for a Math Disability?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "math_disability_diagnosis": {
+    "description": "If your child HAS been tested for a Math Disability, please list diagnosis:"
+  },
+  "tutoring_math": {
+    "Description": "Is or has your child received remediation/tutoring for math issues?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "school_type": {
+    "Description": "My child/children attend(s):"
+  },
+  "regular_classroom": {
+    "Description": "Is your child in a regular classroom?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "other_classroom_type": {
+    "Description": "If no [regular_classroom], please specify:"
+  },
+  "skipped_grades": {
+    "Description": "Has your child repeated or skipped any grades?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "skipped_grades_other": {
+    "Description": "If yes [skipped_grades], please specify:"
+  },
+  "individual_education_plan/504_plan": {
+    "Description": "Does your child have an Individualized Education Plan or a 504 Plan?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_teacher": {
+    "Description": "How does your child prefer to learn? Selected: Listening in class to teacher.",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_visual": {
+    "Description": "How does your child prefer to learn? Selected: Viewing visual information provided in class.",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_demonstrations": {
+    "Description": "How does your child prefer to learn? Selected: Watching demonstrations",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_peer-interactions": {
+    "Description": "How does your child prefer to learn? Selected: Interaction with peers",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_discussions": {
+    "Description": "How does your child prefer to learn? Selected: Participating in discussions",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "learning_preference_other": {
+    "Description": "How does your child prefer to learn? Selected: other. Write-in response."
+  },
+  "primary_language": {
+    "Description": "Primary language spoken at home:"
+  },
+  "lives_with": {
+    "Description": "Child lives with:"
+  },
+  "mother_age": {
+    "LongName": "Mother's age",
+	"Description": "Mother's age within indicated five year increment to protect subject identification"
+  },
+  "mother_occupation": {
+    "LongName": "Mother's occupation",
+	"Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer"
+  },
+  "mother_highest_grade": {
+    "Description": "Mother's highest grade/degree completed",
+    "Levels": {
+      "1": "No High School",
+      "2": "High School",
+      "3": "Some College",
+      "4": "Bachelor's Degree",
+      "5": "Graduate Degree"
+    }
+  },
+  "mother_learning_problems": {
+    "Description": "Mother any history of learning problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "mother_speech_problems": {
+    "Description": "Mother any history of speech problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "mother_behavioral_problems": {
+    "Description": "Mother any history of behavioral problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "mother_medical_problems": {
+    "Description": "Mother any history of medical problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "mother_emotional_problems": {
+    "Description": "Mother any history of emotional problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "mother_drug_alcohol_abuse": {
+    "Description": "Mother any history of drug or alcohol abuse?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_age": {
+    "LongName": "Father's age",
+	"Description": "Father's age within indicated five year increment to protect subject identification"
+  },
+  "father_occupation": {
+    "LongName": "Father's occupation",
+	"Description": "First two digits (major and sub-major group) of ISCO-08 occupation code based on free response answer"
+  },
+  "father_highest_grade": {
+    "LongName": "Father's highest grade/degree completed",
+	"Levels": {
+      "1": "No High School",
+      "2": "High School",
+      "3": "Some College",
+      "4": "Bachelor's Degree",
+      "5": "Graduate Degree"
+    }
+  },
+  "father_learning_problems": {
+    "Description": "Father any history of learning problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_speech_problems": {
+    "Description": "Father any history of speech problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_behavioral_problems": {
+    "Description": "Father any history of behavioral problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_medical_problems": {
+    "Description": "Father any history of medical problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_emotional_problems": {
+    "Description": "Father any history of emotional problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "father_drug_alcohol_abuse": {
+    "Description": "Father any history of drug or alcohol abuse?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "family_history_learning_problems": {
+    "Description": "Any family history of learning problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "family_history_ADD": {
+    "Description": "Any family history of attention deficit disorder?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "family_history_behavioral_problems": {
+    "Description": "Any family history of behavioral problems?",
+    "Levels": {
+      "1": "yes",
+      "2": "No"
+    }
+  },
+  "family_history_neurological_problems": {
+    "Description": "Any family history of neurological problems?",
+    "Levels": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "KeyMath_Numeration_Raw": {
+    "LongName": "KeyMath-3 Numeration Raw Score",
+    "Description": "Numeration subtest raw score"
+  },
+  "KeyMath_Numeration_ScS": {
+    "LongName": "KeyMath-3 Numeration Scaled Score",
+    "Description": "Numeration subtest scale score"
+  },
+  "KeyMath_Measurement_Raw": {
+    "LongName": "KeyMath-3 Measurement Raw Score",
+    "Description": "Measurement subtest raw score"
+  },
+  "KeyMath_Measurement_ScS": {
+    "LongName": "KeyMath-3 Measurement Scaled Score",
+    "Description": "Measurement subtest scale score"
+  },
+  "KeyMath_ProblemSolving_Raw": {
+    "LongName": "KeyMath-3 Problem Solving Raw Score",
+    "Description": "Foundations of problem solving subtest raw score"
+  },
+  "KeyMath_ProblemSolving_ScS": {
+    "LongName": "KeyMath-3 Problem Solving Scaled Score",
+    "Description": "Foundations of problem solving subtest scale score"
+  },
+  "TOMA-2_Attitudes_Raw": {
+    "LongName": "TOMA-2 Attitude Toward Math Raw Score",
+    "Description": "Attitude toward math subtest raw score"
+  },
+  "TOMA-2_Attitudes_StS": {
+    "LongName": "TOMA-2 Attitude Toward Math Standard Score",
+    "Description": "Attitude toward math subtest standard score"
+  },
+  "TOWRE_SW_Raw": {
+    "LongName": "TOWRE Sight Word Efficiency Raw Score",
+    "Description": "Sight word efficiency subtest raw score"
+  },
+  "TOWRE_SW_StS": {
+    "LongName": "TOWRE Sight Word Efficiency Standard Score",
+    "Description": "Sight word efficiency subtest standard score"
+  },
+  "TOWRE_PD_Raw": {
+    "LongName": "TOWRE Phonemic Decoding Efficiency Raw Score",
+    "Description": "Phonemic decoding efficiency subtest raw score"
+  },
+  "TOWRE_PD_StS": {
+    "LongName": "TOWRE Phonemic Decoding Efficiency Standard Score",
+    "Description": "Phonemic decoding efficiency subtest standard score"
+  },
+  "TOWRE_Total_StS": {
+    "LongName": "TOWRE Total Standard Score",
+    "Description": "Total word reading efficiency standard score"
+  },
+  "WASI_Vocab_Raw": {
+    "LongName": "WASI Vocabulary Raw Score",
+    "Description": "Vocabulary subtest raw score"
+  },
+  "WASI_Vocab_T-Score": {
+    "LongName": "WASI Vocabulary T-score",
+    "Description": "Vocabulary subtest T-score"
+  },
+  "WASI_BD_Raw": {
+    "LongName": "WASI Block Design Raw Score",
+    "Description": "Block design subtest raw score"
+  },
+  "WASI_BD_T-Score": {
+    "LongName": "WASI Block Design T-score",
+    "Description": "Block design subtest T-score"
+  },
+  "WASI_Sim_Raw": {
+    "LongName": "WASI Similarities Raw Score",
+    "Description": "Similarities subtest raw score"
+  },
+  "WASI_Sim_T-Score": {
+    "LongName": "WASI Similarities T-score",
+    "Description": "Similarities subtest T-score"
+  },
+  "WASI_MR_Raw": {
+    "LongName": "WASI Matrix Reasoning Raw Score",
+    "Description": "Matrix reasoning subtest raw score"
+  },
+  "WASI_MR_T-Score": {
+    "LongName": "WASI Matrix Reasoning T-score",
+    "Description": "Matrix reasoning subtest T-score"
+  },
+  "WASI_VIQ": {
+    "LongName": "WASI Verbal IQ Score",
+    "Description": "Verbal IQ score"
+  },
+  "WASI_PIQ": {
+    "LongName": "WASI Performance IQ Score",
+    "Description": "Performance IQ score"
+  },
+  "WASI_FSIQ": {
+    "LongName": "WASI Full Scale IQ Score",
+    "Description": "Full Scale IQ score"
+  },
+  "WJ-III_WordID_Raw": {
+    "LongName": "WJ-III Letter-Word Identification Raw Score",
+    "Description": "Letter-Word Identification subtest raw score"
+  },
+  "WJ-III_WordID_StS": {
+    "LongName": "WJ-III Letter-Word Identification Standard Score",
+    "Description": "Letter-Word Identification subtest standard score"
+  },
+  "WJ-III_WA_Raw": {
+    "LongName": "WJ-III Word Attack Raw Score",
+    "Description": "Word Attack subtest raw score"
+  },
+  "WJ-III_WA_StS": {
+    "LongName": "WJ-III Word Attack Standard Score",
+    "Description": "Word Attack subtest standard score"
+  },
+  "WJ-III_PassComp_Raw": {
+    "LongName": "WJ-III Passage Comprehension Raw Score",
+    "Description": "Passage comprehension subtest raw score"
+  },
+  "WJ-III_PassComp_StS": {
+    "LongName": "WJ-III Passage Comprehension Standard Score",
+    "Description": "Passage comprehension subtest standard score"
+  },
+  "WJ-III_MathFluency_Raw": {
+    "LongName": "WJ-III Math Fluency Raw Score",
+    "Description": "Math Fluency subtest raw score"
+  },
+  "WJ-III_MathFluency_StS": {
+    "LongName": "WJ-III Math Fluency Standard Score",
+    "Description": "Math fluency subtest standard score"
+  },
+  "WJ-III_SpatialRelations_Raw":{
+    "LongName": "WJ-III Spatial Relations Raw Score",
+    "Description": "Spatial relations raw score"
+},
+  "WJ-III_SpatialRelations_Letter": {
+    "LongName": "WJ-III Spatial Relations Raw Letter Score",
+    "Description": "Letter corresponding to items administered for spatial relations test"
+  },
+  "WJ-III_SpatialRelations_StS": {
+    "LongName": "WJ-III Spatial Relations Standard Score",
+    "Description": "Spatial Relations subtest standard score"
+  },
+  "WJ-III_BRS_StS": {
+    "LongName": "WJ-III Basic Reading Skills Standard Score",
+    "Description": "Basic Reading Skills cluster standard score"
+  }
+}
