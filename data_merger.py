@@ -1,8 +1,11 @@
 # Data merger.
 import os
+import json
 
 import pandas as pd
 
+DATE_COLUMNS = ['T1w_date', 'Syllogisms_run-01_date', 'Syllogisms_run-02_date', 'Transitive_run-01_date',
+                        'Transitive_run-02_date']
 
 def convert_base_file():
     df = pd.read_csv('..\\ds002886\\participants.tsv', sep='\t')
@@ -12,8 +15,7 @@ def convert_base_file():
     df['handedness'] = df['handedness'].replace(2, 'right')
 
     # Correct all dates
-    for column_name in ['T1w_date', 'Syllogisms_run-01_date', 'Syllogisms_run-02_date', 'Transitive_run-01_date',
-                        'Transitive_run-02_date']:
+    for column_name in DATE_COLUMNS:
         df[column_name] = pd.to_datetime(df[column_name])
         df[column_name] = df[column_name] + pd.DateOffset(years=200)
 
@@ -90,6 +92,27 @@ def add_t2():
         )
     main_df.to_csv('main_dataset_united.csv')
 
+def add_dtype_to_data_description():
+    main_df = pd.read_csv('main_dataset.csv')
+    with open('data_description.json') as openfile:
+        desc = json.load(openfile)
+    for column in main_df.columns:
+        if column in DATE_COLUMNS:
+            desc[column]['type'] = 'datetime64'
+        elif column in desc:
+            desc[column]['type'] = main_df[column].dtype.__str__()
+    with open('data_description.json', 'w') as openfile:
+        json.dump(desc, openfile)
+
+def convert_columns_to_datetime():
+    df = pd.read_csv('main_dataset.csv')
+    for column_name in DATE_COLUMNS:
+        df[column_name] = pd.to_datetime(df[column_name], dayfirst=True)
+        print(df[column_name].dtype)
+    # df.to_csv('main_dataset.csv', index=False)
+
 # convert_base_file()
 # add_t1()
 # add_t2()
+# add_dtype_to_data_description()
+# convert_columns_to_datetime()
