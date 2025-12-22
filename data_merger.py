@@ -57,21 +57,6 @@ def add_t1():
     main_df.to_csv('main_dataset_united.csv')
 
 
-def add_t1():
-    main_df = pd.read_csv('main_dataset.csv')
-    sesT1_path = '..\\ds002886\\phenotype\\ses-T1'
-    for filename in os.listdir(sesT1_path):
-        full_path = sesT1_path + '\\' + filename
-        df = pd.read_csv(full_path, delimiter='\t')
-        main_df = pd.merge(
-            main_df,
-            df,
-            left_on='participant_id',
-            right_on='participant_id',
-            how='left'
-        )
-    main_df.to_csv('main_dataset_united.csv')
-
 
 def add_t2():
     main_df = pd.read_csv('main_dataset.csv')
@@ -111,8 +96,15 @@ def convert_columns_to_datetime():
         print(df[column_name].dtype)
     # df.to_csv('main_dataset.csv', index=False)
 
+def clean_empty_column():
+    df = pd.read_csv('main_dataset.csv')
+    df.dropna(axis=1, how='all', inplace=True)
+    df.to_csv('main_dataset.csv')
+
+
 # convert_base_file()
 # add_t1()
 # add_t2()
 # add_dtype_to_data_description()
 # convert_columns_to_datetime()
+clean_empty_column()
