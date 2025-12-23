@@ -1,0 +1,28 @@
+onset	duration	trial_type	accuracy	response_time	premise1	premise2	premise3	conclusion	stim_file
+0.0	11.294	2_true_affirm	1	2.414	All progs are slow	All slow things are black	Gus is a prog 	Gus is slow	PROG_2_true_affirm.wav
+11.294	11.34	3_true_affirm	1	2.047	All mogs are short	All short things are red	Pam is a mog	Pam is red	MOG_3_true_affirm.wav
+22.634	11.564	3_false_negate	1	2.283	All smods are young	All young things are pink	Lex is a smod	Lex is not pink 	SMOD_3_false_negate.wav
+34.198	11.733	2_false_affirm	0	2.049	All mods are pink	All pink things are tall	Jon is pink	Jon is a mod	MOD_2_false_affirm.wav
+45.931	11.828	3_false_affirm	0	2.998	All plods are black	All black things are short	Tom is short	Tom is a plod 	PLOD_3_false_affirm.wav
+57.759	7.256	control	0	n/a	n/a	n/a	n/a	n/a	n/a
+65.015	10.807	3_true_affirm	1	1.916	All geds are big	All big things are brown	Lou is a ged	Lou is brown 	GED_3_true_affirm.wav
+75.822	11.875	3_true_affirm	1	2.203	All peefs are blue	All blue things are big	Lee is a peef	Lee is big	PEEF_3_true_affirm.wav
+87.697	12.712	3_true_negate	1	3.035	All rogs are green	All green things are tall	Mac is not tall	Mac is not a rog	ROG_3_true_negate.wav
+100.409	13.632	3_false_negate	1	3.995	All brubs are green	All green things are old	Tim is not a brub	Tim is not old 	BRUB_3_false_negate.wav
+114.041	3.693	control	1	0.422	n/a	n/a	n/a	n/a	n/a
+117.734	11.89	2_true_affirm	1	2.646	All nufs are fast	All fast things are blue	Jef is a nuf	Jef is fast 	NUF_2_true_affirm.wav
+129.624	3.866	control	1	0.58	n/a	n/a	n/a	n/a	n/a
+133.49	11.81	3_true_negate	1	2.566	All slofs are red	All red things are slow	Liz is not slow	Liz is not a slof	SLOF_3_true_negate.wav
+145.3	3.365	control	1	0.534	n/a	n/a	n/a	n/a	n/a
+148.665	4.072	control	1	0.451	n/a	n/a	n/a	n/a	n/a
+152.737	4.248	control	1	0.578	n/a	n/a	n/a	n/a	n/a
+156.985	12.211	2_true_affirm	1	2.531	All zods are brown	All brown things are old	Kim is a zod	Kim is brown	ZOD_2_true_affirm.wav
+169.196	12.563	2_true_affirm	1	2.884	All glums are green	All green things are slow	Lin is a glum	Lin is green 	GLUM_2_true_affirm.wav
+181.759	11.196	2_true_negate	1	2.359	All grods are tall	All tall things are green	Rex is not tall	Rex is not a grod	GROD_2_true_negate.wav
+192.955	3.866	control	1	0.615	n/a	n/a	n/a	n/a	n/a
+196.821	11.749	3_true_affirm	1	2.486	All gluds are brown	All brown things are tall	Edd is a glud	Edd is tall 	GLUD_3_true_affirm.wav
+208.57	12.025	2_false_affirm	0	3.182	All gufs are blue	All blue things are fast	Ben is not blue	Ben is a guf	GUF_2_false_affirm.wav
+220.595	3.579	control	1	0.703	n/a	n/a	n/a	n/a	n/a
+224.174	11.792	2_true_affirm	1	2.912	All mabs are white	All white things are tall	Ace is a mab	Ace is white	MAB_2_true_affirm.wav
+235.966	11.575	2_false_negate	1	2.344	All pleefs are blue	All blue things are tall	Fay is a pleef	Fay is not blue	PLEEF_2_false_negate.wav
+247.541	9.437	control	1	0.637	n/a	n/a	n/a	n/a	n/a

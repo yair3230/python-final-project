@@ -1,0 +1,28 @@
+onset	duration	trial_type	accuracy	response_time	premise1	premise2	premise3	conclusion	stim_file
+0.0	12.811	2_false_affirm	0.0	3.913	Ned is slower than Max	Max is slower than Sam	Sam is slower than Rob	Sam is slower than Ned	Ned_2_false_affirm.wav
+12.811	12.927	3_false_affirm	0.0	3.697	Nat is smaller than Rex	Rex is smaller than Bud	Bud is smaller than Doc	Doc is smaller than Nat	Nat_3_false_affirm.wav
+25.738	3.74	control	1.0	0.48	n/a	n/a	n/a	n/a	n/a
+29.478	11.703	2_true_affirm	1.0	2.82	Abe is taller than Ben	Ben is taller than Edd	Edd is taller than Fay	Abe is taller than Edd	Abe_2_true_affirm.wav
+41.181	12.461	3_true_negate	0.0	2.782	Tai is shorter than Rex	Rex is shorter than Van	Van is shorter than Sol	Sol is not shorter than Tai	Tai_3_true_negate.wav
+53.642	13.547	3_true_affirm	1.0	4.718	Lex is shorter than Jon	Jon is shorter than Moe	Moe is shorter than Nat	Lex is shorter than Nat	Lex_3_true_affirm.wav
+67.189	4.039	control	1.0	1.188	n/a	n/a	n/a	n/a	n/a
+71.228	17.606	2_true_affirm	0.0	n/a	Don is younger than Lee	Lee is younger than Mac	Mac is younger than Tom	Don is younger than Mac	Don_2_true_affirm.wav
+88.834	4.571	control	1.0	0.952	n/a	n/a	n/a	n/a	n/a
+93.405	3.881	control	1.0	0.624	n/a	n/a	n/a	n/a	n/a
+97.286	14.004	3_false_negate	1.0	4.351	Bee is younger than Ted	Ted is younger than Rae	Rae is younger than Jon	Bee is not younger than Jon	Bee_3_false_negate.wav
+111.29	13.05	2_true_affirm	1.0	3.422	Ebb is bigger than Pit	Pit is bigger than Ann	Ann is bigger than Ebb	Ebb is bigger than Ann	Ebb_2_true_affirm.wav
+124.34	4.22	control	1.0	0.548	n/a	n/a	n/a	n/a	n/a
+128.56	12.227	3_true_affirm	0.0	3.013	Jep is older than Nan	Nan is older than Lem	Lem is older than Sue	Jep is older than Sue	Jep_3_true_affirm.wav
+140.787	3.711	control	1.0	0.847	n/a	n/a	n/a	n/a	n/a
+144.498	12.454	2_false_negate	1.0	3.154	Dre is faster than Sue	Sue is faster than Ike	Ike is faster than Don	Dre is not faster than Ike	Dre_2_false_negate.wav
+156.952	12.401	2_false_affirm	1.0	3.534	Don is bigger than Abe	Abe is bigger than Pam	Pam is bigger than Rex	Pam is bigger than Don	Don_2_false_affirm.wav
+169.353	11.432	3_true_affirm	1.0	2.602	Don is faster than Max	Max is faster than Dee	Dee is faster than Sky	Don is faster than Sky	Don_3_true_affirm.wav
+180.785	3.599	control	1.0	0.373	n/a	n/a	n/a	n/a	n/a
+184.384	3.265	control	1.0	0.445	n/a	n/a	n/a	n/a	n/a
+187.649	4.14	control	1.0	0.477	n/a	n/a	n/a	n/a	n/a
+191.789	11.602	3_true_affirm	1.0	1.932	Joy is bigger than Gus	Gus is bigger than Ace	Ace is bigger than Kim	Joy is bigger than Kim	Joy_3_true_affirm.wav
+203.391	17.266	2_true_affirm	0.0	n/a	Wes is older than Pam	Pam is older than Tim	Tim is older than Wes	Wes is older than Tim	Wes_2_true_affirm.wav
+220.657	12.804	2_true_negate	0.0	3.538	Dan is slower than Van	Van is slower than Luz	Luz is slower than Bev	Luz is not slower than Dan	Dan_2_true_negate.wav
+233.461	10.868	2_true_negate	0.0	2.175	Ron is smaller than Sam	Sam is smaller than Ace	Ace is smaller than Joe	Ace is not smaller than Ron	Ron_2_true_negate.wav
+244.329	11.521	3_false_negate	1.0	2.659	Tim is faster than Eve	Eve is faster than Fay	Fay is faster than Sam	Tim is not faster than Sam	Tim_3_false_negate.wav
+255.85	12.916	3_true_affirm	1.0	3.69	Bud is slower than Joe	Joe is slower than Liz	Liz is slower than Rex	Bud is slower than Rex	Bud_3_true_affirm.wav

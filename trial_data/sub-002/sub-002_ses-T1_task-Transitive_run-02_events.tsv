@@ -1,0 +1,28 @@
+onset	duration	trial_type	accuracy	response_time	premise1	premise2	premise3	conclusion	stim_file
+0.0	17.238	3_true_negate	0	n/a	Fay is taller than Lou	Lou is taller than Ann	Ann is taller than Red	Red is not taller than Fay	Fay_3_true_negate.wav
+17.238	4.374	control	1	0.687	n/a	n/a	n/a	n/a	n/a
+21.612	14.799000000000001	2_true_affirm	1	5.092	Flo is faster than Ken	Ken is faster than Van	Van is faster than Pam	Flo is faster than Van	Flo_2_true_affirm.wav
+36.411	17.637	3_false_negate	0	n/a	Dot is older than Emm	Emm is older than Lug	Lug is older than Gil	Dot is not older than Gil 	Dot_3_false_negate.wav
+54.048	5.686	control	0	n/a	n/a	n/a	n/a	n/a	n/a
+59.733999999999995	16.899	2_false_negate	0	n/a	Gil is older than Cam	Cam is older than Jen	Jen is older than Ebb	Gil is not older than Jen	Gil_2_false_negate.wav
+76.633	16.898	2_false_affirm	0	n/a	Joy is taller than Ken	Ken is taller than Wes	Wes is taller than Lee	Wes is taller than Joy	Joy_2_false_affirm.wav
+93.531	14.625	2_true_affirm	1	5.723	Lin is shorter than May	May is shorter than Roy	Roy is shorter than Jef	Lin is shorter than Roy	Lin_2_true_affirm.wav
+108.156	14.312000000000001	2_true_affirm	1	4.595	Mal is younger than Sol	Sol is younger than Red	Red is younger than Lee	Mal is younger than Red	Mal_2_true_affirm.wav
+122.46799999999999	13.31	2_true_affirm	1	3.9989999999999997	Jen is faster than Lou	Lou is faster than Rob	Rob is faster than Fin	Jen is faster than Rob	Jen_2_true_affirm.wav
+135.778	14.41	3_true_affirm	1	5.09	Kai is bigger than Rey	Rey is bigger than Lon	Lon is bigger than Sal	Kai is bigger than Sal 	Kai_3_true_affirm.wav
+150.188	13.917	2_false_negate	1	4.231	Mac is older than Flo	Flo is older than Ray	Edd is older than Mac	Mac is not older than Ray	Mac_2_false_negate.wav
+164.105	13.029000000000002	3_true_affirm	1	3.392	Ken is younger than Gil	Gil is younger than Bab	Bab is younger than Ell	Ken is younger than Ell 	Ken_3_true_affirm.wav
+177.13400000000001	6.254	control	1	2.968	n/a	n/a	n/a	n/a	n/a
+183.388	17.634	3_false_affirm	0	n/a	Ike is shorter than Bob	Bob is shorter than Jon	Jon is shorter than Lex	Lex is shorter than Ike	Ike_3_false_affirm.wav
+201.02200000000002	3.945	control	1	0.721	n/a	n/a	n/a	n/a	n/a
+204.967	3.695	control	1	0.873	n/a	n/a	n/a	n/a	n/a
+208.662	4.664	control	1	1.03	n/a	n/a	n/a	n/a	n/a
+213.326	4.447	control	1	0.773	n/a	n/a	n/a	n/a	n/a
+217.773	12.998	3_true_affirm	1	3.694	Cam is smaller than Ike	Ike is smaller than Bob	Bob is smaller than Doc	Cam is smaller than Doc	Cam_3_true_affirm.wav
+230.771	16.907	3_false_affirm	0	n/a	Moe is younger than Liz	Liz is younger than Gus	Gus is younger than Ben	Ben is younger than Moe	Moe_3_false_affirm.wav
+247.678	17.235	3_true_negate	0	n/a	Jep is shorter than Lon	Lon is shorter than Nat	Nat is shorter than Ace 	Ace is not shorter than Jep	Jep_3_true_negate.wav
+264.913	3.8280000000000003	control	1	0.9520000000000001	n/a	n/a	n/a	n/a	n/a
+268.741	17.236	2_true_negate	0	n/a	Fil is faster than Luk	Luk is faster than Dan	Dan is faster than Ace	Dan is not faster than Fil	Fil_2_true_negate.wav
+285.9770000000001	4.336	control	1	1.051	n/a	n/a	n/a	n/a	n/a
+290.313	12.212	3_true_affirm	1	3.2939999999999996	Dre is taller than Kay	Kay is taller than Lug	Lug is taller than Joi	Dre is taller than Joi	Dre_3_true_affirm.wav
+302.525	12.534	2_true_affirm	1	3.734	Don is slower than Jan	Jan is slower than Val	Val is slower than Mac	Don is slower than Val	Don_2_true_affirm2.wav

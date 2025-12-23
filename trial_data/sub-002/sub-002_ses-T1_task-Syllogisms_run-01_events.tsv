@@ -1,0 +1,28 @@
+onset	duration	trial_type	accuracy	response_time	premise1	premise2	premise3	conclusion	stim_file
+0.0	11.593	2_true_affirm	1	1.889	All trabs are fast	All fast things are brown	Abe is a trab	Abe is fast	TRAB_2_true_affirm.wav
+11.593	11.763	3_true_affirm	1	2.061	All hofs are black	All black things are fast	Doc is a hof	Doc is fast	HOF_3_true_affirm.wav
+23.356	10.582	3_true_affirm	1	1.283	All jasps are small	All small things are blue	Jen is a jasp	Jen is blue	JASP_3_true_affirm.wav
+33.938	12.292	2_true_affirm	1	2.984	All nasps are young	All young things are red	Wes is a nasp	Wes is young 	NASP_2_true_affirm.wav
+46.23	12.486	3_true_negate	1	2.765	All drups are white	All white things are young	Moe is not white	Moe is not a drup	DRUP_3_true_negate.wav
+58.716	13.222	2_false_negate	0	4.308	All goms are black	All black things are fast	Max is not a gom	Max is not black	GOM_2_false_negate.wav
+71.938	11.633	3_false_affirm	1	2.807	All gofs are red	All red things are small	Ned is not small	Ned is a gof	GOF_3_false_affirm.wav
+83.571	3.49	control	0	0.608	n/a	n/a	n/a	n/a	n/a
+87.061	13.595	2_true_negate	1	4.335	All dreefs are red	All red things are short	Eve is not red	Eve is not a dreef	DREEF_2_true_negate.wav
+100.656	3.51	control	1	0.682	n/a	n/a	n/a	n/a	n/a
+104.166	4.425	control	1	0.751	n/a	n/a	n/a	n/a	n/a
+108.591	11.963	2_false_affirm	1	2.656	All karns are big	All big things are brown	Nat is not big	Nat is a karn	KARN_2_false_affirm.wav
+120.554	14.282	3_true_affirm	1	4.959	All larns are white	All white things are tall	Bud is a larn	Bud is tall	LARN_3_true_affirm.wav
+134.836	12.495	3_false_negate	0	2.779	All gorns are blue	All blue things are fast	Cam is not a gorn	Cam is not fast 	GORN_3_false_negate.wav
+147.331	12.051	2_true_affirm	1	3.137	All blons are pink	All pink things are young	Ken is a blon	Ken is pink  	BLON_2_true_affirm.wav
+159.382	11.852	3_true_affirm	1	3.005	All keefs are white	All white things are small	Jay is a keef	Jay is small	KEEF_3_true_affirm.wav
+171.234	3.494	control	1	0.666	n/a	n/a	n/a	n/a	n/a
+174.728	4.176	control	1	0.878	n/a	n/a	n/a	n/a	n/a
+178.904	13.727	3_false_affirm	1	4.477	All rabs are old	All old things are blue	Sam is not blue	Sam is a rab	RAB_3_false_affirm.wav
+192.631	3.912	control	1	0.699	n/a	n/a	n/a	n/a	n/a
+196.543	3.845	control	1	0.62	n/a	n/a	n/a	n/a	n/a
+200.388	4.342	control	1	0.654	n/a	n/a	n/a	n/a	n/a
+204.73	11.174	3_true_affirm	1	2.279	All puds are red	All red things are old	Roy is a pud	Roy is old 	PUD_3_true_affirm.wav
+215.904	13.641	2_true_affirm	1	3.946	All nogs are young 	All young things are black	Rob is a nog	Rob is young	NOG_2_true_affirm.wav
+229.545	12.919	2_true_negate	1	3.272	All babs are slow	All slow things are blue	Joe is not slow	Joe is not a bab	BAB_2_true_negate.wav
+242.464	4.069	control	1	0.39	n/a	n/a	n/a	n/a	n/a
+246.533	12.503	2_false_negate	1	3.703	All sarns are old	All old things are white	Flo is a sarn	Flo is not old	SARN_2_false_negate.wav

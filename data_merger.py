@@ -1,11 +1,13 @@
 # Data merger.
 import os
 import json
+import shutil
 
 import pandas as pd
 
 DATE_COLUMNS = ['T1w_date', 'Syllogisms_run-01_date', 'Syllogisms_run-02_date', 'Transitive_run-01_date',
-                        'Transitive_run-02_date']
+                'Transitive_run-02_date']
+
 
 def convert_base_file():
     df = pd.read_csv('..\\ds002886\\participants.tsv', sep='\t')
@@ -57,7 +59,6 @@ def add_t1():
     main_df.to_csv('main_dataset_united.csv')
 
 
-
 def add_t2():
     main_df = pd.read_csv('main_dataset.csv')
     sesT1_path = '..\\ds002886\\phenotype\\ses-T2'
@@ -77,6 +78,7 @@ def add_t2():
         )
     main_df.to_csv('main_dataset_united.csv')
 
+
 def add_dtype_to_data_description():
     main_df = pd.read_csv('main_dataset.csv')
     with open('data_description.json') as openfile:
@@ -89,6 +91,7 @@ def add_dtype_to_data_description():
     with open('data_description.json', 'w') as openfile:
         json.dump(desc, openfile)
 
+
 def convert_columns_to_datetime():
     df = pd.read_csv('main_dataset.csv')
     for column_name in DATE_COLUMNS:
@@ -96,10 +99,32 @@ def convert_columns_to_datetime():
         print(df[column_name].dtype)
     # df.to_csv('main_dataset.csv', index=False)
 
+
 def clean_empty_column():
     df = pd.read_csv('main_dataset.csv')
     df.dropna(axis=1, how='all', inplace=True)
     df.to_csv('main_dataset.csv')
+
+
+def copy_session_data():
+    data_path = '..\\ds002886'
+    target_path = '.\\trial_data'
+    os.mkdir(target_path)
+
+    # Keep only the folders starting with 'sub-'
+    folders = [x for x in os.listdir(data_path) if x.startswith('sub-')]
+
+    for folder in folders:
+        subject_target_folder = target_path + '\\' + folder
+        subject_src_folder = data_path + '\\' + folder + '\\ses-T1\\func'
+        os.mkdir(subject_target_folder)
+
+        # Get the names of all data files in the src folder
+        data_files = [file for file in os.listdir(subject_src_folder) if file.endswith('.tsv')]
+        for file in data_files:
+            src_file = subject_src_folder + '\\' + file
+            dst_file = subject_target_folder + '\\' + file
+            shutil.copy2(src_file, dst_file)
 
 
 # convert_base_file()
@@ -107,4 +132,5 @@ def clean_empty_column():
 # add_t2()
 # add_dtype_to_data_description()
 # convert_columns_to_datetime()
-clean_empty_column()
+# clean_empty_column()
+# copy_session_data()
