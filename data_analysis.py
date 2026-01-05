@@ -1,13 +1,14 @@
+import logging as log
+
 import pandas as pd
 import numpy as np
-import logging as log
 
 
 def normalize_grades_column(series, base, limit):
     """
     Takes a scale of <base> to <limit> and turn it into a scale of 1 to 100
     :param series: list of grades
-    :param limit: The minimum possible score
+    :param base: The minimum possible score
     :param limit: The maximum possible score
     :return: Normalized series
     """
@@ -56,7 +57,5 @@ def fetch_total_math_score(df):
     # Normalize the final result
     final_base = 0
     final_limit = 500
-    final_result = normalize_grades_column(result,final_base, final_limit)
+    final_result = normalize_grades_column(result, final_base, final_limit)
     return final_result
-
-
