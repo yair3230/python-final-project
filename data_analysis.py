@@ -15,7 +15,9 @@ def normalize_grades_column(series, base, limit):
     :return: Normalized series
     """
     if limit < 1:
-        log.error('normalize_grades_column cannot get a limit smaller than 1')
+        raise ArithmeticError('normalize_grades_column cannot get a limit smaller than 1')
+    if limit < base:
+        raise ArithmeticError('Limit cannot be smaller than base')
     result = series - base
     result = result / limit
     result *= 100
