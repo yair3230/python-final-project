@@ -1,3 +1,6 @@
+  > 📝 **הערה:** יש עוד עבודה לסדר את הקבצים ובעיקר לאחד את הוויזואליזציות לgraphs.py ואז יהיה אפשר לערוך את הmain שיהיה קריאות מינימליות לפונקציות של הגרפים .  
+
+
 # Neuro-Data Analysis: Socio-Educational Background vs. Reasoning & Math Skills
 
 ---
@@ -177,3 +180,4 @@ check.ipynb – sanity checks
 bash
 Copy code
 pytest -q
+
