@@ -1,19 +1,187 @@
-{כותרת}
+# Neuro-Data Analysis: Socio-Educational Background vs. Reasoning & Math Skills
 
-{ הצגה כללית של המחקר}
+## 👥 Presenters
 
-{הצגת  השאלות שהעלינו}
+* **Yair Olmayev** (314620535)
+* **Roy Carmelli** (323834515)
+* **Ben Kopler** (204085062)
+* **Matan Spiegel** (2207014648)
 
-{הצגת הDATA והמבנה שלו}
+---
 
-{מבנה הפרוייקט}
+## 🔬 General Research Overview
 
-{הצגת דרך עיבוד המידע בקוד למענה על השאלות}
+This project investigates how a child’s **socio-educational environment** (e.g., parental background and school context) relates to **cognitive/academic outcomes**, with an emphasis on **mathematical achievement** and **deductive reasoning** abilities.
 
-{הגדרת הצלחה וקריטריונים}
+Unlike prior work on this dataset that focused mainly on neural (fMRI) correlates of reasoning, our goal is to examine the **behavioral + background** perspective. We aim to quantify how much "environment" adds to the prediction of ability beyond core cognitive baselines.
 
-{איך לעבוד עם הקוד}
+We work with the OpenNeuro dataset **ds002886** ("Brain Development and Reasoning"). We use the repository’s merged subject-level table (`main_dataset.csv`) together with trial-level behavioral logs (`trial_data/`) to compute measures, run EDA, and fit statistical models.
 
-{מציגים} 
+**Dataset References:**
 
-{סיכום}
+* **OpenNeuro dataset:** ds002886 (v1.1.0)
+* **Repo subject table:** `main_dataset.csv`
+* **Repo trial logs:** `trial_data/`
+
+---
+
+## ❓ The Research Questions We Raised
+
+1. **Association Question (Correlational):**
+How is the socio-educational context (including socio-economic background, school characteristics, and parental professional background) related to mathematical performance and deductive reasoning abilities?
+2. **Incremental Contribution Question (Modeling):**
+Does this relationship remain significant after controlling for individual cognitive variables, specifically IQ components (VIQ, PIQ, FSIQ) and working memory?
+3. **Interpretation Question (Insights):**
+What can we conclude about the relative weight of "environment" (Nurture) in the development of different thinking skills (mathematics vs. logic/reasoning)?
+
+---
+
+## 📂 The Data and Its Structure
+
+This repository contains two main data "layers":
+
+### 1) Subject-level Table
+
+* **File:** `main_dataset.csv`
+* **Unit:** One row per subject (Total 56 subjects)
+* **Contents:** Background variables + cognitive/achievement summaries. (See `data_description.json`).
+
+### 2) Trial-level Behavioral Logs
+
+* **Folder:** `trial_data/`
+* **Unit:** Data per trial, per child
+* **Use:** These logs are processed to derive behavioral reasoning metrics which are then aggregated to the subject level.
+
+### Extra Reference Mapping
+
+* **File:** `isco.csv`
+Used as a reference table for mapping occupational categories (ISCO standards) during feature engineering.
+
+---
+
+## 🧱 Project Structure
+
+The repository follows a modular structure where logic, analysis, and visualization are separated.
+
+* `main.ipynb`: Main end-to-end notebook. It orchestrates the analysis and **calls functions from `graphs.py**` to display visualizations. It contains minimal logic.
+> 🔴 **(חסר: כרגע המיין מכיל את קוד הגרפים בתוכו או קורא למודולים אחרים. יש לשנות אותו כך שיקרא לפונקציות מתוך graphs.py בלבד)**
+
+
+* `graphs.py`: **Module: Visualization.** Contains all functions for generating plots (scatter plots, regression lines, correlation matrices).
+> 🔴 **(חסר: קובץ זה אינו קיים ברפוזיטורי. יש ליצור אותו ולהעביר אליו את כל פונקציות הציור מהמחברות או מ-data_analysis)**
+
+
+* `EDA/`: Folder containing exploratory analysis artifacts and helper notebooks.
+* `eda_background_math_verbal.ipynb`: Focused EDA notebook exploring background vs. math/verbal measures.
+* `check.ipynb`: Sanity checks / quick validation notebook.
+* `data_merger.py`: Data integration pipeline (converts trial logs to subject metrics and merges tables).
+* `data_analysis.py`: Analysis layer: Statistical tests and hierarchical regression modeling.
+* `data_tools.py`: Shared utilities for loading, cleaning, aggregations, and common transformations.
+* `consts.py`: Project constants (paths, column names, configuration flags).
+* `data_description.json`: Data dictionary describing the keys in `main_dataset.csv`.
+* `data_tests/`: Tests that validate major pipeline stages (data loading, transformations, assumptions).
+* `requirements.txt`: Python dependencies to reproduce the environment.
+* `README.md`: Project documentation and guidelines.
+
+---
+
+## ⚙️ How We Process the Data in Code to Answer the Questions
+
+We follow a standard "DA with Python" pipeline structure, implemented as modular building blocks:
+
+### Stage A — Data Loading & Validation
+
+* Load `main_dataset.csv` and trial logs from `trial_data/`.
+* Run integrity checks (handling the ~19% of subjects missing Session 2).
+* **Code locations:** `data_tools.py`, `data_tests/`, `check.ipynb`.
+
+### Stage B — Feature Engineering (Data Engineering)
+
+* Extract data from behavioral logs to calculate reasoning metrics for all subjects.
+* Merge these engineered features into the main table.
+* **Code locations:** `data_merger.py`.
+
+### Stage C — Exploratory Data Analysis (EDA)
+
+* Check distributions and correlations between background variables (e.g., parental education) and cognitive scores.
+* **Visualization:** All EDA plots are generated by calling functions from **`graphs.py`**.
+> 🔴 **(חסר: הקוד כרגע כנראה מפוזר במחברות ה-EDA או ב-main, ואינו מיובא בצורה מסודרת מ-graphs.py)**
+
+
+* **Hypothesis check:** We expect children of "Humanities" parents to show stronger verbal skills, and "Real/STEM" parents to show stronger math skills.
+* **Code locations:** `eda_background_math_verbal.ipynb`, `graphs.py`.
+
+### Stage D — Statistical Modeling (Hierarchical Regression)
+
+We perform a two-stage hierarchical regression:
+
+1. **Baseline Model:** Predict ability based on IQ (VIQ, PIQ, FSIQ) and working memory.
+2. **Extended Model:** Add socio-educational predictors and test if the change in explained variance is significant.
+
+* **Code locations:** `data_analysis.py`, `main.ipynb`.
+
+### Stage E — Results & Interpretation
+
+* Report effect directions, significance, and conclusions regarding the "Nurture" contribution.
+* **Visualization:** Final regression plots and summary charts are drawn using **`graphs.py`**.
+> 🔴 **(חסר: פונקציות הויזואליזציה הסופיות צריכות לעבור ל-graphs.py)**
+
+
+* **Code locations:** `main.ipynb`, `graphs.py`.
+
+---
+
+## 🏆 Success Definition and Criteria
+
+We define success along three axes:
+
+1. **Data Quality Success:**
+Create a final table combining background and experiment data for at least **80% of subjects**.
+2. **Statistical Success:**
+Find a **statistically significant** regression model that determines the relationship between environment and cognitive performance.
+3. **Insight Success:**
+Present a clear conclusion, backed by data, regarding the relative weight of "environment" in developing different thinking skills.
+
+---
+
+## 💻 How to Work with the Code
+
+### 1) Environment Setup
+
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+```
+
+### 2) Recommended Run Path (Notebooks)
+
+Run the project from the main notebook:
+
+1. Open `main.ipynb`.
+2. Run cells top-to-bottom.
+* *Note:* This notebook imports `graphs` and `data_analysis` to keep the interface clean. It does not contain heavy logic blocks.
+
+
+> 🔴 **(חסר: לוודא שה-import הזה אכן עובד לאחר יצירת קובץ ה-graphs.py)**
+
+
+
+**Optional supporting notebooks:**
+
+* `eda_background_math_verbal.ipynb` for focused EDA.
+* `check.ipynb` for quick sanity checks.
+
+### 3) Tests
+
+The project includes tests covering major stages to ensure assumptions are met.
+
+```bash
+pytest -q
+
+```
