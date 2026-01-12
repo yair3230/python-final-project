@@ -26,6 +26,13 @@ def normalize_grades_column(series, base, limit):
     return result
 
 
+def series_to_z_score(series, avg, std):
+    # Fill na with avg
+    result = series.fillna(avg)
+    result = (result - avg) / std
+    return result
+
+
 def convert_strings_to_numbers(series):
     """Convert a string representing a grade to a number"""
     series = series.replace("<1", 0)
@@ -46,25 +53,62 @@ def fetch_total_math_score(df):
         'KeyMath_ProblemSolving_ScS',
         'TOMA-2_Attitudes_StS',
     ]
-    nineteen_limits_base = 0
-    nineteen_limits_limit = 19
+    nineteen_limit_avg = 10
+    nineteen_limit_std = 3
 
-    # This column has a range of 40 to 160
-    wj_column = 'WJ-III_MathFluency_StS'
-    wj_base = 40
-    wj_limit = 140
+    # 100 is avg, 15 is std
+    hundred_column_names = ['WJ-III_MathFluency_StS', 'CMAT_BasicCalc_Comp_Quotient']
+    hundred_avg = 100
+    hundred_std = 15
 
-    normalized_series = []
-    result = normalize_grades_column(df[wj_column], wj_base, wj_limit)
+    result = series_to_z_score(df['WJ-III_MathFluency_StS'], hundred_avg, hundred_std)
+    result += series_to_z_score(df['CMAT_BasicCalc_Comp_Quotient'], hundred_avg, hundred_std)
+    # for column_name in hundred_column_names:
+    #     result += series_to_z_score(df[column_name], hundred_avg, hundred_std)
 
     for column_name in nineteen_limit_columns:
         series = convert_strings_to_numbers(df[column_name])
-        result += normalize_grades_column(series, nineteen_limits_base, nineteen_limits_limit)
+        result += series_to_z_score(series, nineteen_limit_avg, nineteen_limit_std)
 
     # Normalize the final result
-    final_base = 0
-    final_limit = 500
-    final_result = normalize_grades_column(result, final_base, final_limit)
+    final_avg = 0
+    final_std = 6  # std == num of columns
+    final_result = series_to_z_score(result, final_avg, final_std)
+    return final_result
+
+
+def fetch_total_verbal_score(df):
+    """
+    Take the columns corresponding to verbal abilities, and sum them to a total verbal score
+    :return: pd.series containing a total verbal score for each participant
+    """
+
+    # The following columns have a range of 40 to 160
+    column_names = ['AWMA-S_VerbalWM_StS', 'AWMA-S_VerbalSTM_StS', 'TOWRE_SW_StS', 'TOWRE_PD_StS', 'WASI_VIQ']
+    score_avg = 100
+    score_std = 15
+
+    ctop_column_names = ['CTOPP_BW_StS', 'CTOPP_RL_StS']
+    ctop_avg = 10
+    ctop_std = 3
+
+    fifty_avg_columns = 'WASI_Vocab_T-Score'
+    fifty_avg_avg = 50
+    fifty_avg_std = 10
+
+    result = series_to_z_score(df[fifty_avg_columns], fifty_avg_avg, fifty_avg_std)
+    for column_name in column_names:
+        series = convert_strings_to_numbers(df[column_name])
+        result += series_to_z_score(series, score_avg, score_std)
+
+    for column_name in ctop_column_names:
+        series = convert_strings_to_numbers(df[column_name])
+        result += series_to_z_score(series, ctop_avg, ctop_std)
+
+    # Normalize the final result
+    final_avg = 0
+    final_std = len(column_names) + len(ctop_column_names) + 1
+    final_result = series_to_z_score(result, final_avg, final_std)
     return final_result
 
 
