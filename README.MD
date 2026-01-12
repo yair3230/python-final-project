@@ -101,7 +101,7 @@ We follow a standard **“DA with Python”** pipeline implemented as modular bu
 
 ### Stage A — Data Loading & Validation
 - Load `main_dataset.csv` and trial logs from `trial_data/`
-- Run integrity checks (including ~19% missing Session 2)
+- Run integrity checks (including ~19% missing Session 2- for later data analysis we only use the first session)
 - **Code locations:** `data_tools.py`, `data_tests/`, `check.ipynb`
 
 ### Stage B — Feature Engineering (Data Engineering)
@@ -141,8 +141,8 @@ We follow a standard **“DA with Python”** pipeline implemented as modular bu
 1. **Data Quality Success**  
    Final merged table includes at least **80% of subjects**
 
-2. **Statistical Success**  
-   A **statistically significant** regression model explaining the relationship between environment and cognitive performance
+2. **Statistical Success**
+   A **statistically valid** regression model that meets standard assumptions (e.g., normality of residuals), allowing us to confirm or refute the hypothesis regarding the environmental contribution.
 
 3. **Insight Success**  
    Clear, data-backed conclusions regarding the role of *environment* in developing different thinking skills
@@ -163,12 +163,9 @@ pip install -r requirements.txt
 2️⃣ Recommended Run Path (Notebooks)
 Open main.ipynb
 
-Run cells top-to-bottom
+Run cells top-to-bottom.
 
-📝 הערה: main.ipynb אמור לייבא את graphs ו־data_analysis
-ולהכיל מינימום לוגיקה פנימית.
-
-📝 הערה: לאחר יצירת graphs.py, יש לוודא שה־imports עובדים כראוי.
+📝 הערה: main.ipynb אמור לייבא את graphs ו-data_analysis ולהכיל מינימום לוגיקה פנימית. לאחר יצירת graphs.py, יש לוודא שה-imports עובדים כראוי.
 
 Optional supporting notebooks:
 
@@ -177,8 +174,11 @@ eda_background_math_verbal.ipynb – focused EDA
 check.ipynb – sanity checks
 
 3️⃣ Tests
-bash
-Copy code
+To run the project tests:
+
+Bash
+
 pytest -q
+
 
 
