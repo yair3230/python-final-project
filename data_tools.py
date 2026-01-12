@@ -19,7 +19,7 @@ def load_raw_trial_data(root_dir='.\\trial_data'):
                 df_file = pd.read_csv(os.path.join(root, file), sep='\t')
                 raw_list.append(
                     {
-                        'subject': sub,
+                        'participant_id': sub,
                         'task': task,
                         'run': run,
                         'lisas': calculate_lisas(df_file),
@@ -28,5 +28,9 @@ def load_raw_trial_data(root_dir='.\\trial_data'):
                 )
 
     df = pd.DataFrame(raw_list)
+
+    # הוספת התיקנון והיפוך הציון (כך שגבוה = טוב)
+    df['lisas_z'] = df.groupby('task')['lisas'].transform(lambda x: ((x - x.mean()) / x.std()) * -1)
+    
     return df
 
