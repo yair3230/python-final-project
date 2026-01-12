@@ -7,10 +7,10 @@
 
 ## 👥 Presenters
 
-* **Yair Olmayev** (314620535)
-* **Roy Carmelli** (323834515)
-* **Ben Kopler** (204085062)
-* **Matan Spiegel** (2207014648)
+* **Yair Olmayev**
+* **Roy Carmelli**
+* **Ben Kopler**
+* **Matan Spiegel**
 
 ---
 
@@ -195,6 +195,7 @@ To run the project tests:
 pytest -q
 
 ```
+
 
 
 
