@@ -84,7 +84,7 @@ def fetch_total_verbal_score(df):
     """
 
     # The following columns have a range of 40 to 160
-    column_names = ['AWMA-S_VerbalWM_StS', 'AWMA-S_VerbalSTM_StS', 'TOWRE_SW_StS', 'TOWRE_PD_StS', 'WASI_VIQ']
+    column_names = ['AWMA-S_VerbalWM_StS', 'AWMA-S_VerbalSTM_StS', 'TOWRE_Total_StS', 'TOWRE_PD_StS', 'WASI_VIQ']
     score_avg = 100
     score_std = 15
 
