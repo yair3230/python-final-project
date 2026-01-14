@@ -162,9 +162,8 @@ def father_income_correlation(df):
 
 def stage_a(df):
     result = model_stage1(df)
-    log.log(log.INFO, result.summary())
-
-    log.log(log.INFO, "Stage A N:", int(result.nobs))
+    log.info(result.summary())
+    log.info(f"Stage A N: {int(result.nobs)}")
 
 
 def stage_b(df):
