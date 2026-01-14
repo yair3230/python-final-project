@@ -33,58 +33,65 @@ def plot_correlation_heatmap(corr_matrix, title="Spearman Correlations"):
     plt.show()
 
 
-def primal_education_verbal_scatter_plot(df):
+def scatter_point_graph(df, highest_grade_column, std_column):
+    corr_val = df[highest_grade_column].corr(df[std_column])
+
+    plt.figure(figsize=(6, 4))
+    sns.regplot(
+        x=highest_grade_column,
+        y=std_column,
+        data=df,
+        scatter_kws={'alpha': 0.6},  # Transparency for points
+        line_kws={'color': 'red'},  # Distinct color for the correlation line
+    )
+    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    return corr_val
+
+
+def father_education_verbal(df):
     """
     Scatter plot: father's education level vs verbal IQ (VIQ).
     """
-    plt.figure(figsize=(6, 4))
-    plt.scatter(
-        df["father_highest_grade"],
-        df["WASI_VIQ_t2"],
-        alpha=0.7,
-    )
+    corr_val = scatter_point_graph(df, "father_highest_grade", "total_verbal_score")
+
     plt.xlabel("Father's Education Level")
-    plt.ylabel("Verbal IQ (VIQ)")
-    plt.title("Parental Education and Verbal Ability")
-    plt.tight_layout()
+    plt.ylabel("Verbal STD score")
+    plt.title(f"Correlation between Father's Grade and child's Verbal STD (r = {corr_val:.2f})")
     plt.show()
 
 
-def verbal_scatter_plot(df):
-    """
-    Alias for the same plot (kept for backward compatibility).
-    """
-    primal_education_verbal_scatter_plot(df)
-
-
-def father_education_math_vs_verbal_scatter(df):
+def father_education_math(df):
     """
     Plots scatter plots comparing father's education level with both
     verbal IQ (VIQ) and math ability (CMAT).
     """
-    plt.figure(figsize=(10, 4))
+    corr_val = scatter_point_graph(df, "father_highest_grade", "total_math_score")
+    plt.xlabel("Father's Education Level")
+    plt.ylabel("Math STD score")
+    plt.title(f"Correlation between Father's Grade and child's Math STD (r = {corr_val:.2f})")
+    plt.show()
 
-    # Verbal
-    plt.subplot(1, 2, 1)
-    plt.scatter(
-        df["father_highest_grade"],
-        df["WASI_VIQ_t2"],
-        alpha=0.7,
-    )
-    plt.xlabel("Father's Education")
-    plt.ylabel("VIQ")
-    plt.title("Education vs Verbal Ability")
 
-    # Math
-    plt.subplot(1, 2, 2)
-    plt.scatter(
-        df["father_highest_grade"],
-        df["CMAT_BasicCalc_Comp_Quotient"],
-        alpha=0.7,
-    )
-    plt.xlabel("Father's Education")
-    plt.ylabel("Math Ability (CMAT)")
-    plt.title("Education vs Math Ability")
+def mother_education_verbal(df):
+    """
+    Scatter plot: mother's education level vs verbal IQ (VIQ).
+    """
+    corr_val = scatter_point_graph(df, "mother_highest_grade", "total_verbal_score")
 
-    plt.tight_layout()
+    plt.xlabel("Mother's Education Level")
+    plt.ylabel("Verbal STD score")
+    plt.title(f"Correlation between Mother's Grade and child's Verbal STD (r = {corr_val:.2f})")
+    plt.show()
+
+
+def mother_education_math(df):
+    """
+    Plots scatter plots comparing mother's education level with both
+    verbal IQ (VIQ) and math ability (CMAT).
+    """
+    corr_val = scatter_point_graph(df, "mother_highest_grade", "total_math_score")
+    plt.xlabel("Mother's Education Level")
+    plt.ylabel("Math STD score")
+    plt.title(f"Correlation between Mother's Grade and child's Math STD (r = {corr_val:.2f})")
     plt.show()
