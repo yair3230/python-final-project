@@ -224,3 +224,39 @@ def influence_plot(df):
     plt.title("Influential Observations (Stage B Model)")
     plt.tight_layout()
     plt.show()
+
+def bias_vs_stem(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="STEM_Index",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs STEM ability")
+    plt.tight_layout()
+    plt.show()
+
+def bias_vs_verbal(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="Verbal_Index",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs Verbal ability")
+    plt.tight_layout()
+    plt.show()
+
+def bias_vs_academic(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="Child_Cognitive_Bias",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs Academic orientation (STEM − Verbal)")
+    plt.tight_layout()
+    plt.show()
