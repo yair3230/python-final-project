@@ -33,6 +33,11 @@ def series_to_z_score(series, avg, std):
     return result
 
 
+def standardize(series, invert=False):
+    z = (series - series.mean()) / series.std()
+    return z * -1 if invert else z
+
+
 def convert_strings_to_numbers(series):
     """Convert a string representing a grade to a number"""
     series = series.replace("<1", 0)
@@ -172,14 +177,18 @@ def model_stage2(df):
 def calculate_lisas(df):
     """
     Calculating LISAS - Linear Integrated Speed-Accuracy Score
+
     """
     df = df.dropna(subset=['response_time', 'accuracy'])
     correct_trials = df[df['accuracy'] == 1]
     if correct_trials.empty:
         return np.nan
 
+    # rt_ - response time for correct only
+
     rt_mean, rt_std = correct_trials['response_time'].mean(), correct_trials['response_time'].std()
     acc_mean = df['accuracy'].mean()
+    # pe - personal error % , spe - std personal error
     pe, spe = 1 - acc_mean, np.sqrt(acc_mean * (1 - acc_mean))
 
     if spe == 0 or np.isnan(rt_std):
@@ -189,10 +198,11 @@ def calculate_lisas(df):
 
 def map_isco_score(occ):
     """
-    Get a profession and return how humane\realistic it is, on a scale of 0-100. (humane=0)
+    Map profession strings to ISCO scores (humane=0, realistic=100)
     """
     occ_str = str(occ).strip().lower()
 
+    # Handle specific status cases
     # Unemployed = Nan , Self-employed = 65
     if occ_str in ['unemployed', 'nan', 'none']:
         return np.nan
@@ -249,36 +259,122 @@ def calculate_metrics(pivot_df):
     return pivot_df
 
 
-def merge_parental_bias(final_df, main_dataset_path):
-    """Merging parental occupation data"""
+def merge_parental_bias(final_df, main_dataset_path, stem_vars, verbal_vars):
+    """
+    Merges parental occupation scores and cognitive variables from the main dataset
+    """
     if not os.path.exists(main_dataset_path):
         return final_df
 
     parents_df = pd.read_csv(main_dataset_path)
-    # parents_df.rename(columns={'participant_id': 'subject'}, inplace=True)
 
+    # Calculate parental scores
     parents_df['mother_score'] = parents_df['mother_occupation'].apply(map_isco_score)
     parents_df['father_score'] = parents_df['father_occupation'].apply(map_isco_score)
     parents_df['parental_bias'] = parents_df[['mother_score', 'father_score']].mean(axis=1)
 
-    # מיזוג - שומרים על אבא, אמא וממוצע
-    return final_df.merge(
-        parents_df[['participant_id', 'mother_score', 'father_score', 'parental_bias']], on='participant_id', how='left'
-    )
+    # Prepare list of available columns (excluding ID to control its position)
+    all_vars = list(set(stem_vars + verbal_vars + ['WASI_FSIQ', 'parental_bias']))
+    available_cols = [c for c in all_vars if c in parents_df.columns]
+
+    # Merge based on participant_id present in both dataframes
+    merged = pd.merge(final_df, parents_df[['participant_id'] + available_cols], on='participant_id', how='left')
+
+    return merged
 
 
-# --- הפעלה מרכזית ---
-def run_comprehensive_lisas_analysis(raw_data_df, main_dataset_path="main_dataset.csv"):
+def run_integrated_analysis():
+    # --- A. Load LISAS data (Dynamic process) ---
+    raw_list = []
+    root_dir = '.\\trial_data'  # Ensure this points to your data folder
 
-    df = standardize_scores(raw_data_df)
-    pivot_df = pivot_to_subject_level(df)
+    for root, _, files in os.walk(root_dir):
+        for file in files:
+            if file.endswith('.tsv'):
+                # Extract subject ID from filename (e.g., sub-01)
+                sub_id = file.split('_')[0]
+                df_trial = pd.read_csv(os.path.join(root, file), sep='\t')
 
-    # כל החישובים הקוגניטיביים מרוכזים כאן
-    final_df = calculate_metrics(pivot_df)
+                try:
+                    score = calculate_lisas(df_trial)
+                    raw_list.append({'participant_id': sub_id, 'lisas': score})
+                except:
+                    continue
 
-    # הוספת נתוני הורים
-    final_df = merge_parental_bias(final_df, main_dataset_path)
+    # Group by participant_id without converting it to index (prevents 'subject' renaming issues)
+    df_lisas = pd.DataFrame(raw_list).groupby('participant_id', as_index=False)['lisas'].mean()
 
-    # שמירה ל-CSV מסודר
-    # final_df.round(3).to_csv("final_analysis_results.csv", index=False)
+    # --- B. Define Poles (STEM vs Verbal variables) ---
+    stem_vars = [
+        'lisas',
+        'AWMA-S_VisuoSpatialSTM_StS',
+        'AWMA-S_VisuoSpatialWM_StS',
+        'CMAT_BasicCalc_Comp_Quotient',
+        'KeyMath_Numeration_ScS',
+        'KeyMath_Measurement_ScS',
+        'KeyMath_ProblemSolving_ScS',
+        'WASI_PIQ',
+    ]
+
+    verbal_vars = [
+        'AWMA-S_VerbalSTM_StS',
+        'AWMA-S_VerbalWM_StS',
+        'CTOPP_PhonAwareness_Comp',
+        'CTOPP_RapidNaming_Comp',
+        'TOWRE_Total_StS',
+        'WASI_VIQ',
+    ]
+
+    # --- C. Load and Merge Main Dataset ---
+    final_df = merge_parental_bias(df_lisas, 'main_dataset.csv', stem_vars, verbal_vars)
+
+    # --- D. Global Standardization Function ---
+    # Calculate Z-scores for all relevant variables
+    for var in stem_vars + verbal_vars + ['WASI_FSIQ', 'parental_bias']:
+        if var in final_df.columns:
+            # Invert lisas so higher score means better performance (matching other metrics)
+            invert = True if 'lisas' in var.lower() else False
+            final_df[f'{var}_z'] = standardize(final_df[var], invert=invert)
+
+    # --- E. Calculate Indices and Cognitive Bias ---
+    final_df['STEM_Index'] = final_df[[f'{v}_z' for v in stem_vars if f'{v}_z' in final_df.columns]].mean(axis=1)
+    final_df['Verbal_Index'] = final_df[[f'{v}_z' for v in verbal_vars if f'{v}_z' in final_df.columns]].mean(axis=1)
+    final_df['Child_Cognitive_Bias'] = final_df['STEM_Index'] - final_df['Verbal_Index']
+
+    # --- F. Final Formatting and Output ---
+    # Ensure participant_id is the leftmost column
+    cols = ['participant_id'] + [c for c in final_df.columns if c != 'participant_id']
+    final_df = final_df[cols]
+
+    correlation = final_df['Child_Cognitive_Bias'].corr(final_df['parental_bias'])
+
+    print(f"Success! The correlation is: {correlation:.3f}")
+    print("\n--- Top 10 rows of final dataframe ---")
+    print(final_df.head(10))
+
+    # Save to CSV without the pandas internal index
+    final_df.to_csv('analysis_results_full.csv', index=False)
     return final_df
+
+
+def compute_bias_correlation(eda_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Converts relevant columns to numeric and computes Spearman correlation matrix.
+
+    Notes:
+      - 'school_type' is excluded because it's categorical text.
+      - Spearman is used because education levels are ordinal.
+
+    Args:
+        eda_df (pd.DataFrame): EDA dataframe.
+
+    Returns:
+        pd.DataFrame: Spearman correlation matrix.
+    """
+
+    cols_to_numeric = ['parental_bias_z', 'STEM_Index', 'Verbal_Index', 'Child_Cognitive_Bias', 'WASI_FSIQ_z']
+    for col in cols_to_numeric:
+        if col in eda_df.columns:
+            eda_df[col] = pd.to_numeric(eda_df[col], errors="coerce")
+
+    return eda_df[cols_to_numeric].corr(method="pearson")

@@ -25,7 +25,7 @@ def plot_correlation_heatmap(corr_matrix, title="Spearman Correlations"):
         linewidths=0.5,
         linecolor="white",
         annot_kws={"size": 10},
-        cbar_kws={"label": "Spearman correlation"},
+        cbar_kws={"label": title},
     )
 
     plt.title(title, fontsize=15, pad=15)
