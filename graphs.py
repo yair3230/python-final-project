@@ -1,8 +1,11 @@
+import logging as log
+
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data_analysis import model_stage1, model_stage2
 import statsmodels.api as sm
 import scipy.stats as stats
+
+from data_analysis import model_stage1, model_stage2
 
 
 def plot_correlation_heatmap(corr_matrix, title="Spearman Correlations"):
@@ -157,27 +160,24 @@ def father_income_correlation(df):
     plt.show()
 
 
-def stage_A(df):
-
+def stage_a(df):
     result = model_stage1(df)
-    print(result.summary())
+    log.info(result.summary())
+    log.info(f"Stage A N: {int(result.nobs)}")
 
-    print("Stage A N:", int(result.nobs))
 
-
-def stage_B(df):
-
+def stage_b(df):
     result = model_stage2(df)
-    print(result.summary())
+    log.log(log.INFO, result.summary())
 
 
-def hierarchial_model(df):
+def hierarchical_model(df):
     stage1 = model_stage1(df)
     stage2 = model_stage2(df)
     delta_r2 = stage2.rsquared - stage1.rsquared
-    print(f"ΔR² (Stage B – Stage A) = {delta_r2:.3f}")
+    log.log(log.INFO, f"ΔR² (Stage B – Stage A) = {delta_r2:.3f}")
     anova_results = sm.stats.anova_lm(stage1, stage2)
-    print(anova_results)
+    log.log(log.INFO, anova_results)
 
 
 def residuals_graph(df):
@@ -222,5 +222,44 @@ def influence_plot(df):
     plt.xlabel("Observation Index")
     plt.ylabel("Cook's Distance")
     plt.title("Influential Observations (Stage B Model)")
+    plt.tight_layout()
+    plt.show()
+
+
+def bias_vs_stem(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="STEM_Index",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs STEM ability")
+    plt.tight_layout()
+    plt.show()
+
+
+def bias_vs_verbal(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="Verbal_Index",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs Verbal ability")
+    plt.tight_layout()
+    plt.show()
+
+
+def bias_vs_academic(df):
+    sns.regplot(
+        x="parental_bias_z",
+        y="Child_Cognitive_Bias",
+        data=df,
+        scatter_kws={"alpha": 0.6},
+        line_kws={"color": "red"}
+    )
+    plt.title("Parental bias vs Academic orientation (STEM − Verbal)")
     plt.tight_layout()
     plt.show()

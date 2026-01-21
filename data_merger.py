@@ -46,9 +46,9 @@ def convert_base_file():
 
 def add_t1():
     main_df = pd.read_csv('main_dataset.csv')
-    sesT1_path = '..\\ds002886\\phenotype\\ses-T1'
-    for filename in os.listdir(sesT1_path):
-        full_path = sesT1_path + '\\' + filename
+    ses_t1_path = '..\\ds002886\\phenotype\\ses-T1'
+    for filename in os.listdir(ses_t1_path):
+        full_path = ses_t1_path + '\\' + filename
         df = pd.read_csv(full_path, delimiter='\t')
         main_df = pd.merge(main_df, df, left_on='participant_id', right_on='participant_id', how='left')
     main_df.to_csv('main_dataset_united.csv')
@@ -56,9 +56,9 @@ def add_t1():
 
 def add_t2():
     main_df = pd.read_csv('main_dataset.csv')
-    sesT1_path = '..\\ds002886\\phenotype\\ses-T2'
-    for filename in os.listdir(sesT1_path):
-        full_path = sesT1_path + '\\' + filename
+    ses_t1_path = '..\\ds002886\\phenotype\\ses-T2'
+    for filename in os.listdir(ses_t1_path):
+        full_path = ses_t1_path + '\\' + filename
         df = pd.read_csv(full_path, delimiter='\t')
 
         # Rename all columns except 'participant_id'

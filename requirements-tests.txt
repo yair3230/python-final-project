@@ -1,0 +1,7 @@
+pandas~=2.2.2
+numpy
+seaborn~=0.13.2
+statsmodels
+scipy
+matplotlib
+pytest

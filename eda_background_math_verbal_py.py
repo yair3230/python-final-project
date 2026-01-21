@@ -24,7 +24,7 @@ def preprocess_and_compute_correlations(eda_df: pd.DataFrame) -> pd.DataFrame:
       - Spearman is used because education levels are ordinal.
 
     Args:
-        eda_df (pd.DataFrame): EDA dataframe.
+        eda_df (pd.DataFrame): eda dataframe.
 
     Returns:
         pd.DataFrame: Spearman correlation matrix.
@@ -40,6 +40,7 @@ def preprocess_and_compute_correlations(eda_df: pd.DataFrame) -> pd.DataFrame:
         columns={
             'total_math_score': 'math',
             'total_verbal_score': 'verbal',
+            'total_memory_score': 'memory',
             'mother_highest_grade': 'mother_HG',
             'father_highest_grade': 'father_HG',
         }
@@ -53,7 +54,7 @@ def verbal_correlation(eda_df: pd.DataFrame) -> pd.DataFrame:
     Compute Spearman correlation between parental education and Verbal IQ (VIQ).
 
     Args:
-        eda_df (pd.DataFrame): EDA dataframe.
+        eda_df (pd.DataFrame): eda dataframe.
 
     Returns:
         pd.DataFrame: Spearman correlation matrix for the 3 variables.
