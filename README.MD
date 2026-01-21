@@ -100,7 +100,6 @@ We have implemented an integrated analysis pipeline (`data_analysis.py`) used by
 *   **`data_analysis.py`**: Core logic engine (Loading, Scoring, Modeling, Feature Org).
 *   **`graphs.py`**: Visualization library (Heatmaps, Scatter plots, Residual plots).
 *   **`data_tools.py`**: Data utilities for handling raw datasets.
-*   **`eda_background_math_verbal_py.py`**: Helper logic for background correlations EDA.
 *   **`consts.py`**: Project constants and variable definitions.
 
 ---
