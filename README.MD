@@ -85,7 +85,6 @@ How does the **socio-educational context** (SES, parental professional backgroun
 ## 6. 📊 Recent Analysis & Results
 
 We have implemented an integrated analysis pipeline (`data_analysis.py`) used by `main.ipynb` to generate the following insights:
-
 *   **Parental Bias Index:** A standardized score reflecting the parents' vocational orientation.
 *   **Correlation Checks:**
     *   Parental Bias vs. Child's **Real/STEM** abilities.
@@ -95,6 +94,18 @@ We have implemented an integrated analysis pipeline (`data_analysis.py`) used by
 ---
 
 ## 7. 🧱 Project Structure
+
+```mermaid
+graph LR
+    A[main.ipynb<br/>Orchestrator] -->|Calls| B[graphs.py<br/>Visualization]
+    B -->|Uses| C[data_analysis.py<br/>Statistical Modeling]
+    C -->|Uses| D[data_tools.py<br/>Data Utilities]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+```
 
 *   **`main.ipynb`**: Orchestrator notebook. Executes the full pipeline and renders visualizations.
 *   **`data_analysis.py`**: Core logic engine (Loading, Scoring, Modeling, Feature Org).
